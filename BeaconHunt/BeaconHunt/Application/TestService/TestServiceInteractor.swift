@@ -13,7 +13,7 @@ protocol TestServiceInteractorInput {
 }
 
 protocol TestServiceInteractorOutput {
-    func outputBeaconIds(beaconIds: [String])
+    func outputBeaconIds(beaconMinorIds: [String])
     func outputError(error:NSError)
 }
 
@@ -28,7 +28,7 @@ class TestServiceInteractor: TestServiceInteractorInput {
             success: { (beacons) in
                 var ids : [String] = []
                 for beacon in beacons {
-                    ids.append(String(beacon.beaconId))
+                    ids.append(String(beacon.beaconMinorId))
                 }
                 output.outputBeaconIds(ids)
             },

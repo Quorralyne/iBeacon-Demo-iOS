@@ -10,10 +10,10 @@ import Foundation
 
 class Visit : DictionaryConvertible {
     
-    var visitId     : Int    = 0
-    var beaconId    : Int    = 0
-    var userId      : Int    = 0
-    var timestamp   : String = ""
+    var visitId         : Int    = 0
+    var beaconMinorId   : Int    = 0
+    var userId          : Int    = 0
+    var timestamp       : String = ""
     
     init() {}
     
@@ -21,17 +21,17 @@ class Visit : DictionaryConvertible {
         self.init()
         guard let dict   = dictionary else { return }
         if let visitId   = dict["visitId"]   as? String { self.visitId   = Int(visitId)  ?? 0 }
-        if let beaconId  = dict["beaconId"]  as? String { self.beaconId  = Int(beaconId) ?? 0 }
+        if let beaconMinorId  = dict["beaconMinorId"]  as? String { self.beaconMinorId  = Int(beaconMinorId) ?? 0 }
         if let userId    = dict["userId"]    as? String { self.userId    = Int(userId)   ?? 0 }
         if let timestamp = dict["timestamp"] as? String { self.timestamp = timestamp }
     }
     
     func toDictionary() -> [String:AnyObject] {
         return [
-            "visitId"   : String(visitId),
-            "beaconId"  : String(beaconId),
-            "userId"    : String(userId),
-            "timestamp" : timestamp
+            "visitId"       : String(visitId),
+            "beaconMinorId" : String(beaconMinorId),
+            "userId"        : String(userId),
+            "timestamp"     : timestamp
         ]
     }
     

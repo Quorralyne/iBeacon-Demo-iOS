@@ -47,9 +47,9 @@ class TestSceneViewController: UIViewController, TestServiceInteractorOutput {
     }
     
     // MARK: - TestServiceInteractorOutput Protocol
-    func outputBeaconIds(beaconIds: [String]){
+    func outputBeaconIds(beaconMinorIds: [String]){
         dispatch_async(dispatch_get_main_queue()) {
-            self.testLabel.text = "BEACONS:\n\(beaconIds.joinWithSeparator(", "))"
+            self.testLabel.text = "BEACONS:\n\(beaconMinorIds.joinWithSeparator(", "))"
         }
     }
     func outputError(error:NSError){

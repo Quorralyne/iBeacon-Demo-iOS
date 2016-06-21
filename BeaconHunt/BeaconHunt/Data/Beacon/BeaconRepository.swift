@@ -22,37 +22,39 @@ class BeaconRepository {
             failure: { (error) in     failure(error)})
     }
     
-    func getBeacon(beaconId beaconId:Int, success: (([Beacon]) -> ()), failure: ((NSError) -> ())) {
-        self.dataStore?.getAllBeacons(
-            success: { (dictArray) in success(Beacon.beaconsFromDictionaryArray(dictArray)) },
+    func getBeacon(beaconMinorId beaconMinorId:Int, success: ((Beacon) -> ()), failure: ((NSError) -> ())) {
+        self.dataStore?.getBeacon(
+            beaconMinorId: beaconMinorId,
+            success: { (dict) in success(Beacon(dictionary: dict)) },
             failure: { (error) in     failure(error)})
     }
     
-    func addBeacon(credential credential:Credential, success: ((Beacon) -> ()), failure: ((NSError) -> ())) {
+    func addBeacon(beacon:Beacon, credential:Credential, success: (() -> ()), failure: ((NSError) -> ())) {
         self.dataStore?.addBeacon(
+            beaconDict: beacon.toDictionary(),
             credential: credential,
-            success: { (dict) in  success(Beacon(dictionary: dict)) },
+            success: { (dict) in  success() },
             failure: { (error) in failure(error)})
     }
     
-    func deleteBeacon(beaconId beaconId:Int, credential:Credential, success: (() -> ()), failure: ((NSError) -> ())) {
+    func deleteBeacon(beaconMinorId beaconMinorId:Int, credential:Credential, success: (() -> ()), failure: ((NSError) -> ())) {
         self.dataStore?.deleteBeacon(
-            beaconId: beaconId,
+            beaconMinorId: beaconMinorId,
             credential: credential,
             success: { ( _) in    success() },
             failure: { (error) in failure(error)})
     }
     
-    func getAllVisits(beaconId beaconId:Int, success: (([Visit]) -> ()), failure: ((NSError) -> ())) {
+    func getAllVisits(beaconMinorId beaconMinorId:Int, success: (([Visit]) -> ()), failure: ((NSError) -> ())) {
         self.dataStore?.getAllVisits(
-            beaconId: beaconId,
+            beaconMinorId: beaconMinorId,
             success: { (dictArray) in success(Visit.visitsFromDictionaryArray(dictArray)) },
             failure: { (error) in     failure(error)})
     }
     
-    func deleteAllVisits(beaconId beaconId:Int, credential:Credential, success: (() -> ()), failure: ((NSError) -> ())) {
+    func deleteAllVisits(beaconMinorId beaconMinorId:Int, credential:Credential, success: (() -> ()), failure: ((NSError) -> ())) {
         self.dataStore?.deleteAllVisits(
-            beaconId: beaconId,
+            beaconMinorId: beaconMinorId,
             credential: credential,
             success: { ( _) in    success() },
             failure: { (error) in failure(error)})
