@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="z8B-1J-JfL">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--ChallengeListViewController-->
+        <scene sceneID="i0q-bK-bSF">
+            <objects>
+                <viewController storyboardIdentifier="ChallengeListViewController" title="Beacon Hunt" useStoryboardIdentifierAsRestorationIdentifier="YES" id="z8B-1J-JfL" userLabel="ChallengeListViewController" customClass="ChallengeListViewController" customModule="BeaconHunt" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Biz-6r-8va"/>
+                        <viewControllerLayoutGuide type="bottom" id="3Ll-2C-oy9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iV5-0W-4g5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fas-oG-41d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="310" y="231"/>
+        </scene>
+    </scenes>
+</document>

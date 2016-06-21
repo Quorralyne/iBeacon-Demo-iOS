@@ -16,11 +16,11 @@ class UserRepository {
         self.dataStore = dataStore
     }
     
-    func loginUser(user user:User, credential:Credential, success: ((LoginResponse) -> ()), failure: ((NSError) -> ())) {
+    func loginUser(userLogin userLogin:UserLogin, credential:Credential, success: (() -> ()), failure: ((NSError) -> ())) {
         self.dataStore?.loginUser(
-            userDict: user.toDictionary(),
+            userLoginDict: userLogin.toDictionary(),
             credential: credential,
-            success: { (dict) in  success(LoginResponse(dictionary: dict)) },
+            success: { (dict) in  success() },
             failure: { (error) in failure(error)})
     }
     
@@ -37,11 +37,11 @@ class UserRepository {
             failure: { (error) in     failure(error)})
     }
     
-    func addUser(user user:User, credential:Credential, success: (() -> ()), failure: ((NSError) -> ())) {
+    func addUser(user user:User, credential:Credential, success: ((AddUserResponse) -> ()), failure: ((NSError) -> ())) {
         self.dataStore?.addUser(
             userDict: user.toDictionary(),
             credential: credential,
-            success: { (dict) in  success() },
+            success: { (dict) in  success( AddUserResponse(dictionary: dict) ) },
             failure: { (error) in failure(error)})
     }
     

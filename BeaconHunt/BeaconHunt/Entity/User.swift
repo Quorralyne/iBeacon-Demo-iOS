@@ -16,6 +16,12 @@ class User : DictionaryConvertible {
     
     init() {}
     
+    required convenience init(name:String, email:String) {
+        self.init()
+        self.name = name
+        self.email = email
+    }
+    
     required convenience init(dictionary:[String:AnyObject]?) {
         self.init()
         guard let dict = dictionary else { return }
@@ -25,11 +31,11 @@ class User : DictionaryConvertible {
     }
     
     func toDictionary() -> [String:AnyObject] {
-        return [
-            "userId"    : String(userId),
-            "email"     : email,
-            "name"      : name
-        ]
+        var dict = [String:AnyObject]()
+        if (userId > 0)  { dict["userId"] = userId }
+        if (email != "") { dict["email"] = email }
+        if (name  != "") { dict["name"] = name }
+        return dict
     }
     
     static func usersFromDictionaryArray(dictArray:[[String:AnyObject]]?) -> [User] {
@@ -42,7 +48,7 @@ class User : DictionaryConvertible {
 }
 
 
-class LoginResponse : DictionaryConvertible {
+class AddUserResponse : DictionaryConvertible {
     
     var key : String = ""
     
@@ -57,6 +63,34 @@ class LoginResponse : DictionaryConvertible {
     func toDictionary() -> [String:AnyObject] {
         return [
             "key"   : key
+        ]
+    }
+}
+
+class UserLogin : DictionaryConvertible {
+    
+    var username : String = ""
+    var passkey  : String = ""
+    
+    init() {}
+    
+    convenience init(username:String, passkey:String) {
+        self.init()
+        self.username = username
+        self.passkey = passkey
+    }
+    
+    required convenience init(dictionary:[String:AnyObject]?) {
+        self.init()
+        guard let dict = dictionary else { return }
+        if let username = dict["username"]  as? String { self.username = username }
+        if let passkey  = dict["passkey"]  as? String { self.passkey = passkey }
+    }
+    
+    func toDictionary() -> [String:AnyObject] {
+        return [
+            "username"  : username,
+            "passkey"   : passkey
         ]
     }
 }

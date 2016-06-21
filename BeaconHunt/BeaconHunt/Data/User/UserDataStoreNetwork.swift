@@ -9,11 +9,11 @@
 import Foundation
 
 class UserDataStoreNetwork: UserDataStore {
-    func loginUser(userDict userDict:[String:AnyObject], credential:Credential, success: (([String: AnyObject]?) -> ()), failure: ((NSError) -> ())) {
+    func loginUser(userLoginDict userLoginDict:[String:AnyObject], credential:Credential, success: (([String: AnyObject]?) -> ()), failure: ((NSError) -> ())) {
         WebServiceManager.sendRequest(
             endpoint: UserEndpoint.Login,
             credential: credential,
-            data: JSONDataFromDictionary(userDict),
+            data: JSONDataFromDictionary(userLoginDict),
             success: { (data) in  success( parseJSONDictionary(data: data) ) },
             failure: { (error) in failure(error) })
     }
@@ -32,12 +32,12 @@ class UserDataStoreNetwork: UserDataStore {
             failure: { (error) in failure(error) })
     }
     
-    func addUser(userDict userDict:[String:AnyObject], credential:Credential, success: (() -> ()), failure: ((NSError) -> ())) {
+    func addUser(userDict userDict:[String:AnyObject], credential:Credential, success: (([String: AnyObject]?) -> ()), failure: ((NSError) -> ())) {
         WebServiceManager.sendRequest(
             endpoint: UserEndpoint.Add,
             credential: credential,
             data: JSONDataFromDictionary(userDict),
-            success: { (data) in  success() },
+            success: { (data) in  success( parseJSONDictionary(data: data) ) },
             failure: { (error) in failure(error) })
     }
     
