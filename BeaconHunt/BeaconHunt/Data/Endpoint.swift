@@ -96,15 +96,15 @@ enum UserEndpoint : Endpoint {
     
     func getURLPath() -> String {
         switch(self) {
-        case .Login:                                return "users/login"
-        case .GetAll:                               return "users"
-        case .Get(let userid):                      return "users/\(userid)"
-        case .Add:                                  return "users"
-        case .Delete(let userid):                   return "users/\(userid)"
-        case .GetAllVisits(let userid):             return "users/\(userid)/visits"
-        case .GetVisit(let userid, let visitid):    return "users/\(userid)/visits/\(visitid)"
-        case .DeleteAllVisits(let userid):          return "users/\(userid)/visits"
-        case .DeleteVisit(let userid, let visitid): return "users/\(userid)/visits/\(visitid)"
+        case .Login:                                    return "users/login"
+        case .GetAll:                                   return "users"
+        case .Get(let userid):                          return "users/\(userid)"
+        case .Add:                                      return "users"
+        case .Delete(let userid):                       return "users/\(userid)"
+        case .GetAllVisits(let userid):                 return "users/\(userid)/visits"
+        case .GetVisit(let userid, let beaconMinorId):  return "users/\(userid)/visits/\(beaconMinorId)"
+        case .DeleteAllVisits(let userid):              return "users/\(userid)/visits"
+        case .DeleteVisit(let userid, let beaconMinorId): return "users/\(userid)/visits/\(beaconMinorId)"
         }
     }
     

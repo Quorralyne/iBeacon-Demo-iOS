@@ -56,9 +56,9 @@ class UserDataStoreNetwork: UserDataStore {
             failure: { (error) in failure(error) })
     }
     
-    func getVisit(userId userId:Int, visitId:Int, success: (([String: AnyObject]?) -> ()), failure: ((NSError) -> ())) {
+    func getVisit(userId userId:Int, beaconMinorId:Int, success: (([String: AnyObject]?) -> ()), failure: ((NSError) -> ())) {
         WebServiceManager.sendRequest(
-            endpoint: UserEndpoint.GetVisit(userId, visitId),
+            endpoint: UserEndpoint.GetVisit(userId, beaconMinorId),
             success: { (data) in  success( parseJSONDictionary(data: data)) },
             failure: { (error) in failure(error) })
     }
@@ -71,9 +71,9 @@ class UserDataStoreNetwork: UserDataStore {
             failure: { (error) in failure(error) })
     }
     
-    func deleteVisit(userId userId:Int, visitId:Int, credential:Credential, success: (() -> ()), failure: ((NSError) -> ())) {
+    func deleteVisit(userId userId:Int, beaconMinorId:Int, credential:Credential, success: (() -> ()), failure: ((NSError) -> ())) {
         WebServiceManager.sendRequest(
-            endpoint: UserEndpoint.DeleteVisit(userId, visitId),
+            endpoint: UserEndpoint.DeleteVisit(userId, beaconMinorId),
             credential: credential,
             success: { (data) in  success() },
             failure: { (error) in failure(error) })

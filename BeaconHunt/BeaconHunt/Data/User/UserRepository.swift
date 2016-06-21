@@ -60,10 +60,10 @@ class UserRepository {
             failure: { (error) in     failure(error)})
     }
     
-    func getVisit(userId userId:Int, visitId:Int, success: ((Visit) -> ()), failure: ((NSError) -> ())) {
+    func getVisit(userId userId:Int, beaconMinorId:Int, success: ((Visit) -> ()), failure: ((NSError) -> ())) {
         self.dataStore?.getVisit(
             userId: userId,
-            visitId: visitId,
+            beaconMinorId: beaconMinorId,
             success: { (dict) in success(Visit(dictionary: dict)) },
             failure: { (error) in     failure(error)})
     }
@@ -76,10 +76,10 @@ class UserRepository {
             failure: { (error) in     failure(error)})
     }
     
-    func deleteVisit(userId userId:Int, visitId:Int, credential:Credential, success: (() -> ()), failure: ((NSError) -> ())) {
+    func deleteVisit(userId userId:Int, beaconMinorId:Int, credential:Credential, success: (() -> ()), failure: ((NSError) -> ())) {
         self.dataStore?.deleteVisit(
             userId: userId,
-            visitId: visitId,
+            beaconMinorId: beaconMinorId,
             credential: credential,
             success: { ( _) in    success() },
             failure: { (error) in failure(error)})
