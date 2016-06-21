@@ -40,3 +40,23 @@ class User : DictionaryConvertible {
         return users
     }
 }
+
+
+class LoginResponse : DictionaryConvertible {
+    
+    var key : String = ""
+    
+    init() {}
+    
+    required convenience init(dictionary:[String:AnyObject]?) {
+        self.init()
+        guard let dict = dictionary else { return }
+        if let key  = dict["key"]  as? String { self.key = key }
+    }
+    
+    func toDictionary() -> [String:AnyObject] {
+        return [
+            "key"   : key
+        ]
+    }
+}

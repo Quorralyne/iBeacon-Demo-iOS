@@ -70,6 +70,7 @@ enum BeaconEndpoint : Endpoint {
 
 enum UserEndpoint : Endpoint {
     
+    case Login
     case GetAll
     case Get(Int)
     case Add
@@ -81,6 +82,7 @@ enum UserEndpoint : Endpoint {
     
     func getRESTfulVerb() -> RESTfulVerb {
         switch(self) {
+        case .Login:            return .POST
         case .GetAll:           return .GET
         case .Get:              return .GET
         case .Add:              return .POST
@@ -94,6 +96,7 @@ enum UserEndpoint : Endpoint {
     
     func getURLPath() -> String {
         switch(self) {
+        case .Login:                                return "users/login"
         case .GetAll:                               return "users"
         case .Get(let userid):                      return "users/\(userid)"
         case .Add:                                  return "users"

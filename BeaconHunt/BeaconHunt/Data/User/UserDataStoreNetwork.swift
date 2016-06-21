@@ -9,6 +9,15 @@
 import Foundation
 
 class UserDataStoreNetwork: UserDataStore {
+    func loginUser(userDict userDict:[String:AnyObject], credential:Credential, success: (([String: AnyObject]?) -> ()), failure: ((NSError) -> ())) {
+        WebServiceManager.sendRequest(
+            endpoint: UserEndpoint.Login,
+            credential: credential,
+            data: JSONDataFromDictionary(userDict),
+            success: { (data) in  success( parseJSONDictionary(data: data) ) },
+            failure: { (error) in failure(error) })
+    }
+    
     func getAllUsers(success success: (([[String: AnyObject]]?) -> ()), failure: ((NSError) -> ())) {
         WebServiceManager.sendRequest(
             endpoint: UserEndpoint.GetAll,

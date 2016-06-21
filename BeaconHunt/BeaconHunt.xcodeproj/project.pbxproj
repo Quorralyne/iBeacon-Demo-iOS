@@ -27,6 +27,7 @@
 		47BA52901D18A1D80022FE63 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BA528F1D18A1D80022FE63 /* UserRepository.swift */; };
 		47BA52921D18A1E40022FE63 /* UserDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BA52911D18A1E40022FE63 /* UserDataStore.swift */; };
 		47BA52941D18A1F00022FE63 /* UserDataStoreNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BA52931D18A1F00022FE63 /* UserDataStoreNetwork.swift */; };
+		47BA52A71D199C7E0022FE63 /* add-user-response.json in Resources */ = {isa = PBXBuildFile; fileRef = 47BA52A61D199C7E0022FE63 /* add-user-response.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		47BA528F1D18A1D80022FE63 /* UserRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		47BA52911D18A1E40022FE63 /* UserDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataStore.swift; sourceTree = "<group>"; };
 		47BA52931D18A1F00022FE63 /* UserDataStoreNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataStoreNetwork.swift; sourceTree = "<group>"; };
+		47BA52A61D199C7E0022FE63 /* add-user-response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "add-user-response.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				0A1C0CAC1D17354B00BBD772 /* Data */,
 				0A1C0CCA1D1770B700BBD772 /* Entity */,
 				0A1C0CC11D1745A600BBD772 /* Util */,
+				47BA52A51D199C340022FE63 /* TestData */,
 				0A1C0C981D17346100BBD772 /* AppDelegate.swift */,
 				0A1C0C9F1D17346100BBD772 /* Assets.xcassets */,
 				0A1C0CA11D17346100BBD772 /* LaunchScreen.storyboard */,
@@ -189,6 +192,14 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		47BA52A51D199C340022FE63 /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				47BA52A61D199C7E0022FE63 /* add-user-response.json */,
+			);
+			path = TestData;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -250,6 +261,7 @@
 				0A1C0CA31D17346100BBD772 /* LaunchScreen.storyboard in Resources */,
 				0A1C0CA01D17346100BBD772 /* Assets.xcassets in Resources */,
 				0A1C0CAF1D17360D00BBD772 /* TestSceneViewController.storyboard in Resources */,
+				47BA52A71D199C7E0022FE63 /* add-user-response.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

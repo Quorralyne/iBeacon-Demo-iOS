@@ -15,22 +15,33 @@ class WebServiceManager {
     
     static func sendRequest(endpoint endpoint:Endpoint, credential:Credential? = nil, data:NSData? = nil, success:WebServiceManagerSuccess?, failure:WebServiceManagerFailure?)
     {
-        let config = NSURLSessionConfiguration.defaultSessionConfiguration()
-        if let cred = credential {
-            config.HTTPAdditionalHeaders = ["Authorization" : cred.getBasicAuthString()]
-        }
+        var headers = [String:AnyObject]()
         
-        let session = NSURLSession(configuration: config)
+        let method = endpoint.getRESTfulVerb()
         
         let request = NSMutableURLRequest(URL: endpoint.getURL(), cachePolicy: .ReloadIgnoringCacheData, timeoutInterval: 30.0)
-        request.HTTPMethod = endpoint.getRESTfulVerb().rawValue
+        request.HTTPMethod = method.rawValue
         
-        if let body = data { request.HTTPBody = body }
+        if (method == .POST) {
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            headers["Content-Type"] = "application/json"
+            if let body = data { request.HTTPBody = body }
+        }
+        
+        if let cred = credential {
+            request.addValue(cred.getBasicAuthString(), forHTTPHeaderField: "Authorization")
+            headers["Authorization"] = cred.getBasicAuthString()
+        }
+        
+        let config = NSURLSessionConfiguration.defaultSessionConfiguration()
+        if (headers.count > 0) { config.HTTPAdditionalHeaders = headers }
+        
+        let session = NSURLSession(configuration: config)
         
         let task = session.dataTaskWithRequest(request, completionHandler: {
             (data, response, error) in
             if let httpResponse = response as? NSHTTPURLResponse {
-                if (!self.isErrorResponse(httpResponse)){
+                if (!self.isErrorResponse(httpResponse)) {
                     success?(data ?? NSData())
                 } else {
                     failure?(self.generateError(httpResponse.statusCode, templateError: error))

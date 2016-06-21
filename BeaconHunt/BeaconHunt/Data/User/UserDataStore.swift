@@ -9,6 +9,7 @@
 import Foundation
 
 protocol UserDataStore {
+    func loginUser(userDict userDict:[String:AnyObject], credential:Credential, success: (([String: AnyObject]?) -> ()), failure: ((NSError) -> ()))
     func getAllUsers(success success: (([[String: AnyObject]]?) -> ()), failure: ((NSError) -> ()))
     func getUser(userId userId:Int, success: (([String: AnyObject]?) -> ()), failure: ((NSError) -> ()))
     func addUser(userDict userDict:[String:AnyObject], credential:Credential, success: (() -> ()), failure: ((NSError) -> ()))

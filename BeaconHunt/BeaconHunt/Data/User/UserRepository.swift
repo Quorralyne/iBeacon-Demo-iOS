@@ -16,6 +16,14 @@ class UserRepository {
         self.dataStore = dataStore
     }
     
+    func loginUser(user user:User, credential:Credential, success: ((LoginResponse) -> ()), failure: ((NSError) -> ())) {
+        self.dataStore?.loginUser(
+            userDict: user.toDictionary(),
+            credential: credential,
+            success: { (dict) in  success(LoginResponse(dictionary: dict)) },
+            failure: { (error) in failure(error)})
+    }
+    
     func getAllUsers(success success: (([User]) -> ()), failure: ((NSError) -> ())) {
         dataStore?.getAllUsers(
             success: { (dictArray) in  success( User.usersFromDictionaryArray(dictArray) ) },
