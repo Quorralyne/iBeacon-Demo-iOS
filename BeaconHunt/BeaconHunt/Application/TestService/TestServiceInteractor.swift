@@ -19,7 +19,7 @@ protocol TestServiceInteractorOutput {
 
 class TestServiceInteractor: TestServiceInteractorInput {
     
-    private lazy var repo : BeaconsRepository = BeaconsRepository(dataStore: BeaconDataStoreNetwork())
+    private lazy var repo : BeaconRepository = BeaconRepository(dataStore: BeaconDataStoreNetwork())
     
     // MARK: - TestServiceInteractorInput Protocol
     

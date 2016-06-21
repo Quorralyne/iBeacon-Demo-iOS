@@ -22,6 +22,11 @@
 		0A1C0CC91D176CDE00BBD772 /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C0CC81D176CDE00BBD772 /* JSONHelper.swift */; };
 		0A1C0CCC1D1770FE00BBD772 /* Beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C0CCB1D1770FE00BBD772 /* Beacon.swift */; };
 		0A1C0CCE1D17776400BBD772 /* DictionaryConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C0CCD1D17776400BBD772 /* DictionaryConvertible.swift */; };
+		47BA528A1D189E050022FE63 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BA52891D189E050022FE63 /* User.swift */; };
+		47BA528C1D189F130022FE63 /* Visit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BA528B1D189F130022FE63 /* Visit.swift */; };
+		47BA52901D18A1D80022FE63 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BA528F1D18A1D80022FE63 /* UserRepository.swift */; };
+		47BA52921D18A1E40022FE63 /* UserDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BA52911D18A1E40022FE63 /* UserDataStore.swift */; };
+		47BA52941D18A1F00022FE63 /* UserDataStoreNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BA52931D18A1F00022FE63 /* UserDataStoreNetwork.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +47,11 @@
 		0A1C0CC81D176CDE00BBD772 /* JSONHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONHelper.swift; sourceTree = "<group>"; };
 		0A1C0CCB1D1770FE00BBD772 /* Beacon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beacon.swift; sourceTree = "<group>"; };
 		0A1C0CCD1D17776400BBD772 /* DictionaryConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryConvertible.swift; sourceTree = "<group>"; };
+		47BA52891D189E050022FE63 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		47BA528B1D189F130022FE63 /* Visit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Visit.swift; sourceTree = "<group>"; };
+		47BA528F1D18A1D80022FE63 /* UserRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		47BA52911D18A1E40022FE63 /* UserDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataStore.swift; sourceTree = "<group>"; };
+		47BA52931D18A1F00022FE63 /* UserDataStoreNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataStoreNetwork.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +118,7 @@
 			children = (
 				0A1C0CBC1D173FC700BBD772 /* Authentication */,
 				0A1C0CB51D173C2300BBD772 /* Beacon */,
+				47BA528D1D18A1930022FE63 /* User */,
 				0A1C0CC41D17475100BBD772 /* Endpoint.swift */,
 			);
 			path = Data;
@@ -162,8 +173,20 @@
 			isa = PBXGroup;
 			children = (
 				0A1C0CCB1D1770FE00BBD772 /* Beacon.swift */,
+				47BA52891D189E050022FE63 /* User.swift */,
+				47BA528B1D189F130022FE63 /* Visit.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		47BA528D1D18A1930022FE63 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				47BA528F1D18A1D80022FE63 /* UserRepository.swift */,
+				47BA52911D18A1E40022FE63 /* UserDataStore.swift */,
+				47BA52931D18A1F00022FE63 /* UserDataStoreNetwork.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,18 +260,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47BA528A1D189E050022FE63 /* User.swift in Sources */,
 				0A1C0C991D17346100BBD772 /* AppDelegate.swift in Sources */,
 				0A1C0CC51D17475100BBD772 /* Endpoint.swift in Sources */,
 				0A1C0CC01D17405C00BBD772 /* Credential.swift in Sources */,
+				47BA52921D18A1E40022FE63 /* UserDataStore.swift in Sources */,
 				0A1C0CB71D173CB400BBD772 /* BeaconRepository.swift in Sources */,
 				0A1C0CB41D173C0F00BBD772 /* TestServiceInteractor.swift in Sources */,
 				0A1C0CC31D17461B00BBD772 /* WebServiceManager.swift in Sources */,
 				0A1C0CB11D17364000BBD772 /* TestSceneViewController.swift in Sources */,
+				47BA52901D18A1D80022FE63 /* UserRepository.swift in Sources */,
 				0A1C0CBB1D173EF300BBD772 /* BeaconDataStoreNetwork.swift in Sources */,
 				0A1C0CB91D173CF100BBD772 /* BeaconDataStore.swift in Sources */,
 				0A1C0CCE1D17776400BBD772 /* DictionaryConvertible.swift in Sources */,
+				47BA52941D18A1F00022FE63 /* UserDataStoreNetwork.swift in Sources */,
 				0A1C0CCC1D1770FE00BBD772 /* Beacon.swift in Sources */,
 				0A1C0CC91D176CDE00BBD772 /* JSONHelper.swift in Sources */,
+				47BA528C1D189F130022FE63 /* Visit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +420,7 @@
 				0A1C0CA91D17346100BBD772 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
