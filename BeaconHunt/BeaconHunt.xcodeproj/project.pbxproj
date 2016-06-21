@@ -22,6 +22,8 @@
 		0A1C0CC91D176CDE00BBD772 /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C0CC81D176CDE00BBD772 /* JSONHelper.swift */; };
 		0A1C0CCC1D1770FE00BBD772 /* Beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C0CCB1D1770FE00BBD772 /* Beacon.swift */; };
 		0A1C0CCE1D17776400BBD772 /* DictionaryConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C0CCD1D17776400BBD772 /* DictionaryConvertible.swift */; };
+		0AEC90F31D18FFEB00238C64 /* ChallengeSceneViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AEC90F21D18FFEB00238C64 /* ChallengeSceneViewController.storyboard */; };
+		0AEC90F51D19011200238C64 /* ChallengeSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEC90F41D19011200238C64 /* ChallengeSceneViewController.swift */; };
 		47BA528A1D189E050022FE63 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BA52891D189E050022FE63 /* User.swift */; };
 		47BA528C1D189F130022FE63 /* Visit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BA528B1D189F130022FE63 /* Visit.swift */; };
 		47BA52901D18A1D80022FE63 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BA528F1D18A1D80022FE63 /* UserRepository.swift */; };
@@ -48,6 +50,8 @@
 		0A1C0CC81D176CDE00BBD772 /* JSONHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONHelper.swift; sourceTree = "<group>"; };
 		0A1C0CCB1D1770FE00BBD772 /* Beacon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beacon.swift; sourceTree = "<group>"; };
 		0A1C0CCD1D17776400BBD772 /* DictionaryConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryConvertible.swift; sourceTree = "<group>"; };
+		0AEC90F21D18FFEB00238C64 /* ChallengeSceneViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChallengeSceneViewController.storyboard; sourceTree = "<group>"; };
+		0AEC90F41D19011200238C64 /* ChallengeSceneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeSceneViewController.swift; sourceTree = "<group>"; };
 		47BA52891D189E050022FE63 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		47BA528B1D189F130022FE63 /* Visit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Visit.swift; sourceTree = "<group>"; };
 		47BA528F1D18A1D80022FE63 /* UserRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
@@ -103,6 +107,10 @@
 		0A1C0CAA1D1734FD00BBD772 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				0AEC90F01D18FE9C00238C64 /* LoginUserScene */,
+				0AEC90EF1D18FE7700238C64 /* CreateUserScene */,
+				0AEC90F11D18FED300238C64 /* ChallengeListScene */,
+				0AEC90EA1D18FCFF00238C64 /* ChallengeScene */,
 				0A1C0CAD1D1735C700BBD772 /* TestScene */,
 			);
 			path = Presentation;
@@ -182,6 +190,36 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
+		0AEC90EA1D18FCFF00238C64 /* ChallengeScene */ = {
+			isa = PBXGroup;
+			children = (
+				0AEC90F21D18FFEB00238C64 /* ChallengeSceneViewController.storyboard */,
+				0AEC90F41D19011200238C64 /* ChallengeSceneViewController.swift */,
+			);
+			path = ChallengeScene;
+			sourceTree = "<group>";
+		};
+		0AEC90EF1D18FE7700238C64 /* CreateUserScene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CreateUserScene;
+			sourceTree = "<group>";
+		};
+		0AEC90F01D18FE9C00238C64 /* LoginUserScene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LoginUserScene;
+			sourceTree = "<group>";
+		};
+		0AEC90F11D18FED300238C64 /* ChallengeListScene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ChallengeListScene;
+			sourceTree = "<group>";
+		};
 		47BA528D1D18A1930022FE63 /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +270,7 @@
 				TargetAttributes = {
 					0A1C0C941D17346100BBD772 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = D2J8X5QH2J;
 					};
 				};
 			};
@@ -260,6 +299,7 @@
 			files = (
 				0A1C0CA31D17346100BBD772 /* LaunchScreen.storyboard in Resources */,
 				0A1C0CA01D17346100BBD772 /* Assets.xcassets in Resources */,
+				0AEC90F31D18FFEB00238C64 /* ChallengeSceneViewController.storyboard in Resources */,
 				0A1C0CAF1D17360D00BBD772 /* TestSceneViewController.storyboard in Resources */,
 				47BA52A71D199C7E0022FE63 /* add-user-response.json in Resources */,
 			);
@@ -273,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47BA528A1D189E050022FE63 /* User.swift in Sources */,
+				0AEC90F51D19011200238C64 /* ChallengeSceneViewController.swift in Sources */,
 				0A1C0C991D17346100BBD772 /* AppDelegate.swift in Sources */,
 				0A1C0CC51D17475100BBD772 /* Endpoint.swift in Sources */,
 				0A1C0CC01D17405C00BBD772 /* Credential.swift in Sources */,
@@ -395,10 +436,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BeaconHunt/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.quorralyne.BeaconHunt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -406,10 +451,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BeaconHunt/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.quorralyne.BeaconHunt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
