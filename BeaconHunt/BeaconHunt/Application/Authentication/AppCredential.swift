@@ -11,3 +11,8 @@
 func AppCredential() -> Credential {
     return Credential(username: "BeaconBacon", password: "T3sterMcGee!")
 }
+
+
+private var _loggedInUserID : Int = 0
+func GetLoggedInUserID() -> Int { return _loggedInUserID }
+func SetLoggedInUserID(uid:Int) { _loggedInUserID = uid  }

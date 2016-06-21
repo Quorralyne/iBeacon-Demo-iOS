@@ -1,0 +1,20 @@
+ [
+  {
+  "BeaconMinorId": "1234",
+  "Title": "Challenge 1",
+  "Description": "Where am I?",
+  "Hint": "High places."
+  },
+  {
+  "BeaconMinorId": "5678",
+  "Title": "Challenge 2",
+  "Description": "Where am I? - pt 2",
+  "Hint": "Behind you."
+  },
+  {
+  "BeaconMinorId": "9101",
+  "Title": "Challenge 3",
+  "Description": "Where am I? - pt 3",
+  "Hint": "Around and about."
+  }
+]

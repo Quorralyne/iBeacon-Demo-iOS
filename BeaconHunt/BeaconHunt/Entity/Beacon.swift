@@ -20,16 +20,16 @@ class Beacon : DictionaryConvertible {
     required convenience init(dictionary:[String:AnyObject]?) {
         self.init()
         guard let dict = dictionary else { return }
-        if let beaconMinorId = dict["beaconMinorId"] as? String { self.beaconMinorId = Int(beaconMinorId) ?? 0 }
-        if let majorId = dict["majorId"] as? String { self.majorId = Int(majorId) ?? 0 }
+        if let beaconMinorId = dict["BeaconMinorId"] as? String { self.beaconMinorId = Int(beaconMinorId) ?? 0 }
+        if let majorId = dict["MajorId"] as? String { self.majorId = Int(majorId) ?? 0 }
         if let UUID = dict["UUID"] as? String { self.UUID = UUID }
         if let manufacturer = dict["Manufacturer"] as? String { self.manufacturer = manufacturer }
     }
     
     func toDictionary() -> [String:AnyObject] {
         return [
-            "beaconMinorId" : String(beaconMinorId),
-            "majorId"       : String(majorId),
+            "BeaconMinorId" : String(beaconMinorId),
+            "MajorId"       : String(majorId),
             "UUID"          : UUID,
             "Manufacturer"  : manufacturer
         ]

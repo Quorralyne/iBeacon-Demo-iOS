@@ -26,15 +26,15 @@ class User : DictionaryConvertible {
         self.init()
         guard let dict = dictionary else { return }
         if let userId  = dict["userId"] as? String { self.userId = Int(userId) ?? 0 }
-        if let email   = dict["email"]  as? String { self.email = email }
-        if let name    = dict["name"]   as? String { self.name = name }
+        if let email   = dict["Email"]  as? String { self.email = email }
+        if let name    = dict["Name"]   as? String { self.name = name }
     }
     
     func toDictionary() -> [String:AnyObject] {
         var dict = [String:AnyObject]()
         if (userId > 0)  { dict["userId"] = userId }
-        if (email != "") { dict["email"] = email }
-        if (name  != "") { dict["name"] = name }
+        if (email != "") { dict["Email"] = email }
+        if (name  != "") { dict["Name"] = name }
         return dict
     }
     
@@ -50,6 +50,7 @@ class User : DictionaryConvertible {
 
 class AddUserResponse : DictionaryConvertible {
     
+    var userId : Int = 0
     var key : String = ""
     
     init() {}
@@ -57,11 +58,13 @@ class AddUserResponse : DictionaryConvertible {
     required convenience init(dictionary:[String:AnyObject]?) {
         self.init()
         guard let dict = dictionary else { return }
+        if let userId = dict["userId"] as? String { self.userId = Int(userId) ?? 0 }
         if let key  = dict["key"]  as? String { self.key = key }
     }
     
     func toDictionary() -> [String:AnyObject] {
         return [
+            "userId": userId,
             "key"   : key
         ]
     }

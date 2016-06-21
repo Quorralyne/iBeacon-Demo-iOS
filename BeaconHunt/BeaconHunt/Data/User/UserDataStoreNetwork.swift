@@ -8,7 +8,8 @@
 
 import Foundation
 
-class UserDataStoreNetwork: UserDataStore {
+class UserDataStoreNetwork : UserDataStore {
+    
     func loginUser(userLoginDict userLoginDict:[String:AnyObject], credential:Credential, success: (([String: AnyObject]?) -> ()), failure: ((NSError) -> ())) {
         WebServiceManager.sendRequest(
             endpoint: UserEndpoint.Login,

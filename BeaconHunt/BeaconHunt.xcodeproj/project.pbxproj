@@ -10,7 +10,6 @@
 		0A1C0C991D17346100BBD772 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C0C981D17346100BBD772 /* AppDelegate.swift */; };
 		0A1C0CA01D17346100BBD772 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A1C0C9F1D17346100BBD772 /* Assets.xcassets */; };
 		0A1C0CA31D17346100BBD772 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A1C0CA11D17346100BBD772 /* LaunchScreen.storyboard */; };
-		0A1C0CB41D173C0F00BBD772 /* TestServiceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C0CB31D173C0F00BBD772 /* TestServiceInteractor.swift */; };
 		0A1C0CB71D173CB400BBD772 /* BeaconRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C0CB61D173CB400BBD772 /* BeaconRepository.swift */; };
 		0A1C0CB91D173CF100BBD772 /* BeaconDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C0CB81D173CF100BBD772 /* BeaconDataStore.swift */; };
 		0A1C0CBB1D173EF300BBD772 /* BeaconDataStoreNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C0CBA1D173EF300BBD772 /* BeaconDataStoreNetwork.swift */; };
@@ -37,7 +36,22 @@
 		47BA52BA1D19BC330022FE63 /* CreateUserViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47BA52B91D19BC330022FE63 /* CreateUserViewController.storyboard */; };
 		47BA52BC1D19BDE70022FE63 /* CreateUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BA52BB1D19BDE70022FE63 /* CreateUserInteractor.swift */; };
 		47BA52BE1D19C1970022FE63 /* ChallengeListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47BA52BD1D19C1970022FE63 /* ChallengeListViewController.storyboard */; };
-		47BA52C01D19C1AE0022FE63 /* ChallengeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BA52BF1D19C1AE0022FE63 /* ChallengeListViewController.swift */; };
+		47BA52C21D19E6DC0022FE63 /* ChallengeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BA52C11D19E6DC0022FE63 /* ChallengeListViewController.swift */; };
+		47BA52C41D19EE160022FE63 /* beacon-list-response.json in Resources */ = {isa = PBXBuildFile; fileRef = 47BA52C31D19EE160022FE63 /* beacon-list-response.json */; };
+		47BA52C61D19EF5B0022FE63 /* BeaconDataStoreLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BA52C51D19EF5B0022FE63 /* BeaconDataStoreLocal.swift */; };
+		47BA52C81D19F36E0022FE63 /* get-beacon-response.json in Resources */ = {isa = PBXBuildFile; fileRef = 47BA52C71D19F36E0022FE63 /* get-beacon-response.json */; };
+		47BA52CA1D19F4750022FE63 /* get-all-visits-response.json in Resources */ = {isa = PBXBuildFile; fileRef = 47BA52C91D19F4750022FE63 /* get-all-visits-response.json */; };
+		47BA52CD1D19F6990022FE63 /* ChallengeListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BA52CC1D19F6990022FE63 /* ChallengeListInteractor.swift */; };
+		47BA52CF1D19FFF20022FE63 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BA52CE1D19FFF20022FE63 /* Challenge.swift */; };
+		47BA52D21D1A009E0022FE63 /* ChallengeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BA52D11D1A009E0022FE63 /* ChallengeRepository.swift */; };
+		47BA52D41D1A00E70022FE63 /* ChallengeDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BA52D31D1A00E70022FE63 /* ChallengeDataStore.swift */; };
+		47BA52D61D1A01140022FE63 /* ChallengeDataStoreNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BA52D51D1A01140022FE63 /* ChallengeDataStoreNetwork.swift */; };
+		47BA52D81D1A01880022FE63 /* ChallengeDataStoreLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BA52D71D1A01880022FE63 /* ChallengeDataStoreLocal.swift */; };
+		47BA52DA1D1A020C0022FE63 /* get-all-challenges-response.json in Resources */ = {isa = PBXBuildFile; fileRef = 47BA52D91D1A020C0022FE63 /* get-all-challenges-response.json */; };
+		47BA52DC1D1A04180022FE63 /* UserDataStoreLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BA52DB1D1A04180022FE63 /* UserDataStoreLocal.swift */; };
+		47BA52DE1D1A04AF0022FE63 /* login-user-response.json in Resources */ = {isa = PBXBuildFile; fileRef = 47BA52DD1D1A04AF0022FE63 /* login-user-response.json */; };
+		47BA52E01D1A05BF0022FE63 /* get-user-response.json in Resources */ = {isa = PBXBuildFile; fileRef = 47BA52DF1D1A05BF0022FE63 /* get-user-response.json */; };
+		47BA52E21D1A060A0022FE63 /* get-all-users-response.json in Resources */ = {isa = PBXBuildFile; fileRef = 47BA52E11D1A060A0022FE63 /* get-all-users-response.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +60,6 @@
 		0A1C0C9F1D17346100BBD772 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A1C0CA21D17346100BBD772 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A1C0CA41D17346100BBD772 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0A1C0CB31D173C0F00BBD772 /* TestServiceInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestServiceInteractor.swift; sourceTree = "<group>"; };
 		0A1C0CB61D173CB400BBD772 /* BeaconRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconRepository.swift; sourceTree = "<group>"; };
 		0A1C0CB81D173CF100BBD772 /* BeaconDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconDataStore.swift; sourceTree = "<group>"; };
 		0A1C0CBA1D173EF300BBD772 /* BeaconDataStoreNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconDataStoreNetwork.swift; sourceTree = "<group>"; };
@@ -73,7 +86,22 @@
 		47BA52B91D19BC330022FE63 /* CreateUserViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateUserViewController.storyboard; sourceTree = "<group>"; };
 		47BA52BB1D19BDE70022FE63 /* CreateUserInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserInteractor.swift; sourceTree = "<group>"; };
 		47BA52BD1D19C1970022FE63 /* ChallengeListViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChallengeListViewController.storyboard; sourceTree = "<group>"; };
-		47BA52BF1D19C1AE0022FE63 /* ChallengeListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeListViewController.swift; sourceTree = "<group>"; };
+		47BA52C11D19E6DC0022FE63 /* ChallengeListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeListViewController.swift; sourceTree = "<group>"; };
+		47BA52C31D19EE160022FE63 /* beacon-list-response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "beacon-list-response.json"; sourceTree = "<group>"; };
+		47BA52C51D19EF5B0022FE63 /* BeaconDataStoreLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconDataStoreLocal.swift; sourceTree = "<group>"; };
+		47BA52C71D19F36E0022FE63 /* get-beacon-response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "get-beacon-response.json"; sourceTree = "<group>"; };
+		47BA52C91D19F4750022FE63 /* get-all-visits-response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "get-all-visits-response.json"; sourceTree = "<group>"; };
+		47BA52CC1D19F6990022FE63 /* ChallengeListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeListInteractor.swift; sourceTree = "<group>"; };
+		47BA52CE1D19FFF20022FE63 /* Challenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
+		47BA52D11D1A009E0022FE63 /* ChallengeRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeRepository.swift; sourceTree = "<group>"; };
+		47BA52D31D1A00E70022FE63 /* ChallengeDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeDataStore.swift; sourceTree = "<group>"; };
+		47BA52D51D1A01140022FE63 /* ChallengeDataStoreNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeDataStoreNetwork.swift; sourceTree = "<group>"; };
+		47BA52D71D1A01880022FE63 /* ChallengeDataStoreLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeDataStoreLocal.swift; sourceTree = "<group>"; };
+		47BA52D91D1A020C0022FE63 /* get-all-challenges-response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "get-all-challenges-response.json"; sourceTree = "<group>"; };
+		47BA52DB1D1A04180022FE63 /* UserDataStoreLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataStoreLocal.swift; sourceTree = "<group>"; };
+		47BA52DD1D1A04AF0022FE63 /* login-user-response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "login-user-response.json"; sourceTree = "<group>"; };
+		47BA52DF1D1A05BF0022FE63 /* get-user-response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "get-user-response.json"; sourceTree = "<group>"; };
+		47BA52E11D1A060A0022FE63 /* get-all-users-response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "get-all-users-response.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				47BA52AA1D19A6190022FE63 /* Authentication */,
-				0A1C0CB21D173BAF00BBD772 /* TestService */,
+				47BA52CB1D19F66C0022FE63 /* ChallengeList */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -146,18 +174,11 @@
 			children = (
 				0A1C0CBC1D173FC700BBD772 /* Authentication */,
 				0A1C0CB51D173C2300BBD772 /* Beacon */,
+				47BA52D01D1A007A0022FE63 /* Challenge */,
 				47BA528D1D18A1930022FE63 /* User */,
 				0A1C0CC41D17475100BBD772 /* Endpoint.swift */,
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		0A1C0CB21D173BAF00BBD772 /* TestService */ = {
-			isa = PBXGroup;
-			children = (
-				0A1C0CB31D173C0F00BBD772 /* TestServiceInteractor.swift */,
-			);
-			path = TestService;
 			sourceTree = "<group>";
 		};
 		0A1C0CB51D173C2300BBD772 /* Beacon */ = {
@@ -166,6 +187,7 @@
 				0A1C0CB61D173CB400BBD772 /* BeaconRepository.swift */,
 				0A1C0CB81D173CF100BBD772 /* BeaconDataStore.swift */,
 				0A1C0CBA1D173EF300BBD772 /* BeaconDataStoreNetwork.swift */,
+				47BA52C51D19EF5B0022FE63 /* BeaconDataStoreLocal.swift */,
 			);
 			path = Beacon;
 			sourceTree = "<group>";
@@ -192,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				0A1C0CCB1D1770FE00BBD772 /* Beacon.swift */,
+				47BA52CE1D19FFF20022FE63 /* Challenge.swift */,
 				47BA52891D189E050022FE63 /* User.swift */,
 				47BA528B1D189F130022FE63 /* Visit.swift */,
 			);
@@ -229,7 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				47BA52BD1D19C1970022FE63 /* ChallengeListViewController.storyboard */,
-				47BA52BF1D19C1AE0022FE63 /* ChallengeListViewController.swift */,
+				47BA52C11D19E6DC0022FE63 /* ChallengeListViewController.swift */,
 			);
 			path = ChallengeListScene;
 			sourceTree = "<group>";
@@ -240,6 +263,7 @@
 				47BA528F1D18A1D80022FE63 /* UserRepository.swift */,
 				47BA52911D18A1E40022FE63 /* UserDataStore.swift */,
 				47BA52931D18A1F00022FE63 /* UserDataStoreNetwork.swift */,
+				47BA52DB1D1A04180022FE63 /* UserDataStoreLocal.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -248,6 +272,13 @@
 			isa = PBXGroup;
 			children = (
 				47BA52A61D199C7E0022FE63 /* add-user-response.json */,
+				47BA52DD1D1A04AF0022FE63 /* login-user-response.json */,
+				47BA52DF1D1A05BF0022FE63 /* get-user-response.json */,
+				47BA52E11D1A060A0022FE63 /* get-all-users-response.json */,
+				47BA52C31D19EE160022FE63 /* beacon-list-response.json */,
+				47BA52C71D19F36E0022FE63 /* get-beacon-response.json */,
+				47BA52C91D19F4750022FE63 /* get-all-visits-response.json */,
+				47BA52D91D1A020C0022FE63 /* get-all-challenges-response.json */,
 			);
 			path = TestData;
 			sourceTree = "<group>";
@@ -260,6 +291,25 @@
 				47BA52BB1D19BDE70022FE63 /* CreateUserInteractor.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		47BA52CB1D19F66C0022FE63 /* ChallengeList */ = {
+			isa = PBXGroup;
+			children = (
+				47BA52CC1D19F6990022FE63 /* ChallengeListInteractor.swift */,
+			);
+			path = ChallengeList;
+			sourceTree = "<group>";
+		};
+		47BA52D01D1A007A0022FE63 /* Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				47BA52D11D1A009E0022FE63 /* ChallengeRepository.swift */,
+				47BA52D31D1A00E70022FE63 /* ChallengeDataStore.swift */,
+				47BA52D51D1A01140022FE63 /* ChallengeDataStoreNetwork.swift */,
+				47BA52D71D1A01880022FE63 /* ChallengeDataStoreLocal.swift */,
+			);
+			path = Challenge;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,13 +371,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47BA52E01D1A05BF0022FE63 /* get-user-response.json in Resources */,
+				47BA52E21D1A060A0022FE63 /* get-all-users-response.json in Resources */,
+				47BA52C41D19EE160022FE63 /* beacon-list-response.json in Resources */,
+				47BA52DE1D1A04AF0022FE63 /* login-user-response.json in Resources */,
 				47BA52BE1D19C1970022FE63 /* ChallengeListViewController.storyboard in Resources */,
+				47BA52CA1D19F4750022FE63 /* get-all-visits-response.json in Resources */,
 				0A1C0CA31D17346100BBD772 /* LaunchScreen.storyboard in Resources */,
 				0A1C0CA01D17346100BBD772 /* Assets.xcassets in Resources */,
 				0AEC90F31D18FFEB00238C64 /* ChallengeSceneViewController.storyboard in Resources */,
 				47BA52B01D19ADB70022FE63 /* Main.storyboard in Resources */,
 				47BA52BA1D19BC330022FE63 /* CreateUserViewController.storyboard in Resources */,
+				47BA52C81D19F36E0022FE63 /* get-beacon-response.json in Resources */,
 				47BA52B21D19ADF50022FE63 /* LoginViewController.storyboard in Resources */,
+				47BA52DA1D1A020C0022FE63 /* get-all-challenges-response.json in Resources */,
 				47BA52A71D199C7E0022FE63 /* add-user-response.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,28 +396,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47BA52CD1D19F6990022FE63 /* ChallengeListInteractor.swift in Sources */,
+				47BA52D41D1A00E70022FE63 /* ChallengeDataStore.swift in Sources */,
+				47BA52CF1D19FFF20022FE63 /* Challenge.swift in Sources */,
 				47BA52B41D19AE030022FE63 /* LoginViewController.swift in Sources */,
 				47BA528A1D189E050022FE63 /* User.swift in Sources */,
 				0AEC90F51D19011200238C64 /* ChallengeSceneViewController.swift in Sources */,
+				47BA52D21D1A009E0022FE63 /* ChallengeRepository.swift in Sources */,
 				0A1C0C991D17346100BBD772 /* AppDelegate.swift in Sources */,
 				47BA52BC1D19BDE70022FE63 /* CreateUserInteractor.swift in Sources */,
 				0A1C0CC51D17475100BBD772 /* Endpoint.swift in Sources */,
 				0A1C0CC01D17405C00BBD772 /* Credential.swift in Sources */,
+				47BA52C61D19EF5B0022FE63 /* BeaconDataStoreLocal.swift in Sources */,
+				47BA52D61D1A01140022FE63 /* ChallengeDataStoreNetwork.swift in Sources */,
 				47BA52921D18A1E40022FE63 /* UserDataStore.swift in Sources */,
 				0A1C0CB71D173CB400BBD772 /* BeaconRepository.swift in Sources */,
-				0A1C0CB41D173C0F00BBD772 /* TestServiceInteractor.swift in Sources */,
 				47BA52AE1D19A7C80022FE63 /* LoginInteractor.swift in Sources */,
 				0A1C0CC31D17461B00BBD772 /* WebServiceManager.swift in Sources */,
 				47BA52901D18A1D80022FE63 /* UserRepository.swift in Sources */,
 				0A1C0CBB1D173EF300BBD772 /* BeaconDataStoreNetwork.swift in Sources */,
+				47BA52DC1D1A04180022FE63 /* UserDataStoreLocal.swift in Sources */,
 				0A1C0CB91D173CF100BBD772 /* BeaconDataStore.swift in Sources */,
 				0A1C0CCE1D17776400BBD772 /* DictionaryConvertible.swift in Sources */,
 				47BA52941D18A1F00022FE63 /* UserDataStoreNetwork.swift in Sources */,
+				47BA52D81D1A01880022FE63 /* ChallengeDataStoreLocal.swift in Sources */,
 				47BA52B81D19BA970022FE63 /* CreateUserViewController.swift in Sources */,
 				0A1C0CCC1D1770FE00BBD772 /* Beacon.swift in Sources */,
 				47BA52AC1D19A65F0022FE63 /* AppCredential.swift in Sources */,
 				0A1C0CC91D176CDE00BBD772 /* JSONHelper.swift in Sources */,
-				47BA52C01D19C1AE0022FE63 /* ChallengeListViewController.swift in Sources */,
+				47BA52C21D19E6DC0022FE63 /* ChallengeListViewController.swift in Sources */,
 				47BA528C1D189F130022FE63 /* Visit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

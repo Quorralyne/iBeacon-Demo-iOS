@@ -21,17 +21,17 @@ class Visit : DictionaryConvertible {
         self.init()
         guard let dict   = dictionary else { return }
         if let visitId   = dict["visitId"]   as? String { self.visitId   = Int(visitId)  ?? 0 }
-        if let beaconMinorId  = dict["beaconMinorId"]  as? String { self.beaconMinorId  = Int(beaconMinorId) ?? 0 }
-        if let userId    = dict["userId"]    as? String { self.userId    = Int(userId)   ?? 0 }
-        if let timestamp = dict["timestamp"] as? String { self.timestamp = timestamp }
+        if let beaconMinorId  = dict["BeaconMinorId"]  as? String { self.beaconMinorId  = Int(beaconMinorId) ?? 0 }
+        if let userId    = dict["UserId"]    as? String { self.userId    = Int(userId)   ?? 0 }
+        if let timestamp = dict["VisitedTimestamp"] as? String { self.timestamp = timestamp }
     }
     
     func toDictionary() -> [String:AnyObject] {
         return [
             "visitId"       : String(visitId),
-            "beaconMinorId" : String(beaconMinorId),
-            "userId"        : String(userId),
-            "timestamp"     : timestamp
+            "BeaconMinorId" : String(beaconMinorId),
+            "UserId"        : String(userId),
+            "VisitedTimestamp"     : timestamp
         ]
     }
     

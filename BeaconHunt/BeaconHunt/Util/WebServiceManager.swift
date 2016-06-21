@@ -46,6 +46,8 @@ class WebServiceManager {
                 } else {
                     failure?(self.generateError(httpResponse.statusCode, templateError: error))
                 }
+            } else {
+                failure?(self.generateError(-1, templateError: NSError(domain: "WebServiceManager", code: -1, userInfo: ["message":"Invalid Response"])))
             }
         })
         

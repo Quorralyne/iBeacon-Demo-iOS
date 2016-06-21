@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BeaconDataStoreNetwork: BeaconDataStore {
+class BeaconDataStoreNetwork : BeaconDataStore {
     
     func getAllBeacons(success success: (([[String: AnyObject]]?) -> ()), failure: ((NSError) -> ())) {
         WebServiceManager.sendRequest(

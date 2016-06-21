@@ -68,6 +68,25 @@ enum BeaconEndpoint : Endpoint {
 }
 
 
+enum ChallengeEndpoint : Endpoint {
+    
+    case GetAll
+    
+    func getRESTfulVerb() -> RESTfulVerb {
+        switch(self) {
+        case .GetAll:   return .GET
+        }
+    }
+    
+    func getURLPath() -> String {
+        switch(self) {
+        case .GetAll:   return "challenges"
+        }
+    }
+    
+}
+
+
 enum UserEndpoint : Endpoint {
     
     case Login

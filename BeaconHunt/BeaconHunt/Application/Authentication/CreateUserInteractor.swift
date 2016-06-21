@@ -19,7 +19,7 @@ protocol CreateUserInteractorOutput {
 
 class CreateUserInteractor: CreateUserInteractorInput {
     
-    private lazy var userRepository : UserRepository = UserRepository(dataStore: UserDataStoreNetwork())
+    private lazy var userRepository : UserRepository = UserRepository(dataStore: UserDataStoreLocal())
     
     // MARK: - LoginInteractorInput Protocol
     

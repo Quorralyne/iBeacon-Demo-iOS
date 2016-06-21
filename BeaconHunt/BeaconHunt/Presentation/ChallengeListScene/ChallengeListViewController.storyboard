@@ -1,26 +1,63 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="z8B-1J-JfL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6XZ-KI-X3L">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--ChallengeListViewController-->
-        <scene sceneID="i0q-bK-bSF">
+        <scene sceneID="qQt-aP-d0M">
             <objects>
-                <viewController storyboardIdentifier="ChallengeListViewController" title="Beacon Hunt" useStoryboardIdentifierAsRestorationIdentifier="YES" id="z8B-1J-JfL" userLabel="ChallengeListViewController" customClass="ChallengeListViewController" customModule="BeaconHunt" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Biz-6r-8va"/>
-                        <viewControllerLayoutGuide type="bottom" id="3Ll-2C-oy9"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="iV5-0W-4g5">
+                <tableViewController storyboardIdentifier="ChallengeListViewController" title="Beacon Hunt" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6XZ-KI-X3L" userLabel="ChallengeListViewController" customClass="ChallengeListViewController" customModule="BeaconHunt" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="TEc-fE-yDo">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Fas-oG-41d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChallengeListTableCell" textLabel="2Hd-hj-hCn" detailTextLabel="2aD-JO-j2n" style="IBUITableViewCellStyleSubtitle" id="Zdh-PG-6Ue">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zdh-PG-6Ue" id="jMB-lN-fnV">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2Hd-hj-hCn">
+                                            <rect key="frame" x="15" y="6" width="31.5" height="19.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2aD-JO-j2n">
+                                            <rect key="frame" x="15" y="25.5" width="40.5" height="13.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6XZ-KI-X3L" id="L3d-5e-gYx"/>
+                            <outlet property="delegate" destination="6XZ-KI-X3L" id="Wr2-a5-G95"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="WgZ-Lx-I9t" kind="show" identifier="toChallengeSceneSegueID" id="ZvS-BX-Sh6"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LMV-Wf-qVm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="310" y="231"/>
+            <point key="canvasLocation" x="319" y="123"/>
+        </scene>
+        <!--ChallengeSceneViewController-->
+        <scene sceneID="Pun-9U-CgD">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ChallengeSceneViewController" id="WgZ-Lx-I9t" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iNo-3l-1zL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="872.5" y="123"/>
         </scene>
     </scenes>
 </document>
