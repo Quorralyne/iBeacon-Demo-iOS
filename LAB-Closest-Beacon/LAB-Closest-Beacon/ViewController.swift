@@ -58,20 +58,41 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        locationManager.delegate = self;
-
-        if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedWhenInUse) {
-            locationManager.requestWhenInUseAuthorization()
-        }
+        setupLocationManager()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         
-        locationManager.startRangingBeaconsInRegion(region)
+        startLocationManager()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        stopLocationManager()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 
     }
-
+    
+    private func setupLocationManager(){
+        locationManager.delegate = self;
+        
+        if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedWhenInUse) {
+            locationManager.requestWhenInUseAuthorization()
+        }
+    }
+    
+    private func startLocationManager(){
+        locationManager.startRangingBeaconsInRegion(region)
+    }
+    
+    private func stopLocationManager(){
+        locationManager.stopRangingBeaconsInRegion(region)
+    }
 
 }
 
