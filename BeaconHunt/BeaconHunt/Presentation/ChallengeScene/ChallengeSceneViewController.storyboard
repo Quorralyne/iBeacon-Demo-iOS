@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="p9D-ek-KvK">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Challenge Scene View Controller-->
+        <scene sceneID="9dl-kf-S0g">
+            <objects>
+                <viewController id="p9D-ek-KvK" customClass="ChallengeSceneViewController" customModule="BeaconHunt" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2tp-8e-ZIE"/>
+                        <viewControllerLayoutGuide type="bottom" id="VCE-VI-Sdk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="227-Yn-UH6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Have you found it?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kby-IY-W6S">
+                                <rect key="frame" x="20" y="396" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kby-IY-W6S" firstAttribute="leading" secondItem="227-Yn-UH6" secondAttribute="leading" constant="20" id="CCk-fI-cHq"/>
+                            <constraint firstAttribute="trailing" secondItem="kby-IY-W6S" secondAttribute="trailing" constant="20" id="aUi-sc-Tr4"/>
+                            <constraint firstItem="VCE-VI-Sdk" firstAttribute="top" secondItem="kby-IY-W6S" secondAttribute="bottom" constant="183" id="vNT-GK-ggo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="statusLabel" destination="kby-IY-W6S" id="sJE-6v-6pI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QwI-52-K9s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="433" y="443"/>
+        </scene>
+    </scenes>
+</document>
