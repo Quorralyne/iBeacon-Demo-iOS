@@ -15,3 +15,7 @@ func parseJSONDictionaryArray(data data:NSData) -> [[String:AnyObject]]? {
 func parseJSONDictionary(data data:NSData) -> [String:AnyObject]? {
     return (try? NSJSONSerialization.JSONObjectWithData(data, options: [])) as? [String: AnyObject]
 }
+
+func JSONDataFromDictionary(dictionary:[String:AnyObject]) -> NSData? {
+    return try? NSJSONSerialization.dataWithJSONObject(dictionary, options: NSJSONWritingOptions(rawValue: 0))
+}

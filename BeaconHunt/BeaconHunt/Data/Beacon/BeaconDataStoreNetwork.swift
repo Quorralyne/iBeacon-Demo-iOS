@@ -28,6 +28,7 @@ class BeaconDataStoreNetwork: BeaconDataStore {
         WebServiceManager.sendRequest(
             endpoint: BeaconEndpoint.Add,
             credential: credential,
+            data: JSONDataFromDictionary(beaconDict),
             success: { (data) in  success() },
             failure: { (error) in failure(error) })
     }

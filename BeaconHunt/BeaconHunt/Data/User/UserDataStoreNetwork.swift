@@ -27,6 +27,7 @@ class UserDataStoreNetwork: UserDataStore {
         WebServiceManager.sendRequest(
             endpoint: UserEndpoint.Add,
             credential: credential,
+            data: JSONDataFromDictionary(userDict),
             success: { (data) in  success() },
             failure: { (error) in failure(error) })
     }

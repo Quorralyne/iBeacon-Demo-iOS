@@ -13,7 +13,7 @@ typealias WebServiceManagerFailure = (NSError) -> ()
 
 class WebServiceManager {
     
-    static func sendRequest(endpoint endpoint:Endpoint, credential:Credential? = nil, success:WebServiceManagerSuccess?, failure:WebServiceManagerFailure?)
+    static func sendRequest(endpoint endpoint:Endpoint, credential:Credential? = nil, data:NSData? = nil, success:WebServiceManagerSuccess?, failure:WebServiceManagerFailure?)
     {
         let config = NSURLSessionConfiguration.defaultSessionConfiguration()
         if let cred = credential {
@@ -24,6 +24,8 @@ class WebServiceManager {
         
         let request = NSMutableURLRequest(URL: endpoint.getURL(), cachePolicy: .ReloadIgnoringCacheData, timeoutInterval: 30.0)
         request.HTTPMethod = endpoint.getRESTfulVerb().rawValue
+        
+        if let body = data { request.HTTPBody = body }
         
         let task = session.dataTaskWithRequest(request, completionHandler: {
             (data, response, error) in
