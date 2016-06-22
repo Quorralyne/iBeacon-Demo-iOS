@@ -22,6 +22,8 @@ class ChallengeSceneViewController: UIViewController, CLLocationManagerDelegate 
         if (knownBeacons.count > 0) {
             let closestBeacon = knownBeacons[0] as CLBeacon
             
+            
+            
             self.changeStatusText("You found it!" + String(closestBeacon.minor.integerValue))
             self.view.backgroundColor = UIColor.greenColor()
         }

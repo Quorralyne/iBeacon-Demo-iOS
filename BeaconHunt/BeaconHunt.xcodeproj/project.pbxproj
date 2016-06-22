@@ -19,6 +19,7 @@
 		0A1C0CC91D176CDE00BBD772 /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C0CC81D176CDE00BBD772 /* JSONHelper.swift */; };
 		0A1C0CCC1D1770FE00BBD772 /* Beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C0CCB1D1770FE00BBD772 /* Beacon.swift */; };
 		0A1C0CCE1D17776400BBD772 /* DictionaryConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C0CCD1D17776400BBD772 /* DictionaryConvertible.swift */; };
+		0A51D7121D1A685B0027D1C2 /* VisitedBeaconInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A51D7111D1A685B0027D1C2 /* VisitedBeaconInteractor.swift */; };
 		0AEC90F31D18FFEB00238C64 /* ChallengeSceneViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AEC90F21D18FFEB00238C64 /* ChallengeSceneViewController.storyboard */; };
 		0AEC90F51D19011200238C64 /* ChallengeSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEC90F41D19011200238C64 /* ChallengeSceneViewController.swift */; };
 		47BA528A1D189E050022FE63 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BA52891D189E050022FE63 /* User.swift */; };
@@ -69,6 +70,7 @@
 		0A1C0CC81D176CDE00BBD772 /* JSONHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONHelper.swift; sourceTree = "<group>"; };
 		0A1C0CCB1D1770FE00BBD772 /* Beacon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beacon.swift; sourceTree = "<group>"; };
 		0A1C0CCD1D17776400BBD772 /* DictionaryConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryConvertible.swift; sourceTree = "<group>"; };
+		0A51D7111D1A685B0027D1C2 /* VisitedBeaconInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitedBeaconInteractor.swift; sourceTree = "<group>"; };
 		0AEC90F21D18FFEB00238C64 /* ChallengeSceneViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChallengeSceneViewController.storyboard; sourceTree = "<group>"; };
 		0AEC90F41D19011200238C64 /* ChallengeSceneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeSceneViewController.swift; sourceTree = "<group>"; };
 		47BA52891D189E050022FE63 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 		0A1C0CAB1D17352100BBD772 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				0A51D7101D1A68190027D1C2 /* Challenge */,
 				47BA52AA1D19A6190022FE63 /* Authentication */,
 				47BA52CB1D19F66C0022FE63 /* ChallengeList */,
 			);
@@ -219,6 +222,14 @@
 				47BA528B1D189F130022FE63 /* Visit.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		0A51D7101D1A68190027D1C2 /* Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				0A51D7111D1A685B0027D1C2 /* VisitedBeaconInteractor.swift */,
+			);
+			path = Challenge;
 			sourceTree = "<group>";
 		};
 		0AEC90EA1D18FCFF00238C64 /* ChallengeScene */ = {
@@ -417,6 +428,7 @@
 				0A1C0CBB1D173EF300BBD772 /* BeaconDataStoreNetwork.swift in Sources */,
 				47BA52DC1D1A04180022FE63 /* UserDataStoreLocal.swift in Sources */,
 				0A1C0CB91D173CF100BBD772 /* BeaconDataStore.swift in Sources */,
+				0A51D7121D1A685B0027D1C2 /* VisitedBeaconInteractor.swift in Sources */,
 				0A1C0CCE1D17776400BBD772 /* DictionaryConvertible.swift in Sources */,
 				47BA52941D18A1F00022FE63 /* UserDataStoreNetwork.swift in Sources */,
 				47BA52D81D1A01880022FE63 /* ChallengeDataStoreLocal.swift in Sources */,
