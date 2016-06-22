@@ -16,6 +16,13 @@ class Visit : DictionaryConvertible {
     
     init() {}
     
+    convenience init(beaconMinorId:Int, userId:Int, timestamp:String) {
+        self.init()
+        self.beaconMinorId = beaconMinorId
+        self.userId = userId
+        self.timestamp = timestamp
+    }
+    
     required convenience init(dictionary:[String:AnyObject]?) {
         self.init()
         guard let dict   = dictionary else { return }
