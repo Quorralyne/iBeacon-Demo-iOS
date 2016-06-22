@@ -9,9 +9,17 @@
 import UIKit
 import CoreLocation
 
-class ChallengeSceneViewController: UIViewController, CLLocationManagerDelegate {
+class ChallengeSceneViewController: UIViewController, CLLocationManagerDelegate, VisitedBeaconInteractorOutput, ChallengeListDetailPresenter {
+    
+    private var selectedChallenge: [String:AnyObject] = [:]
 
     @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var hintLabel: UILabel!
+    @IBOutlet weak var hintButton: UIButton!
+    
+    private lazy var visitedBeaconInteractor : VisitedBeaconInteractorInput = VisitedBeaconInteractor()
     
     let locationManager = CLLocationManager()
     
@@ -21,16 +29,35 @@ class ChallengeSceneViewController: UIViewController, CLLocationManagerDelegate 
         let knownBeacons = beacons.filter{ $0.proximity != CLProximity.Unknown }
         if (knownBeacons.count > 0) {
             let closestBeacon = knownBeacons[0] as CLBeacon
-            
-            
-            
-            self.changeStatusText("You found it!" + String(closestBeacon.minor.integerValue))
-            self.view.backgroundColor = UIColor.greenColor()
+            if(closestBeacon.minor.integerValue == selectedChallenge["BeaconMinorId"] as? Int){
+                
+                visitedBeaconInteractor.addVisit(closestBeacon.minor.integerValue, output: self)
+                
+                self.changeStatusText("You found it! " + String(closestBeacon.minor.integerValue))
+                self.view.backgroundColor = UIColor.greenColor()
+            }
         }
     }
     
     func changeStatusText(text : String) {
         self.statusLabel.text = String(text)
+    }
+    
+    func showHintLabel(){
+        self.hintLabel.text = selectedChallenge["Note"] as? String
+    }
+    
+    func setChallengeData(challengeData:[String:AnyObject]){
+        self.selectedChallenge = challengeData
+        self.titleLabel.text = challengeData["Title"] as? String
+        self.descriptionLabel.text = challengeData["Description"] as? String
+        self.hintLabel.text = ""
+    }
+    
+    //MARK: - Actions
+    
+    @IBAction func hintButtonAction(sender:AnyObject?) {
+        self.showHintLabel()
     }
     
     // MARK: - Lifecycle
@@ -72,6 +99,13 @@ class ChallengeSceneViewController: UIViewController, CLLocationManagerDelegate 
     
     private func stopLocationManager(){
         locationManager.stopRangingBeaconsInRegion(region)
+    }
+    
+    func visitedBeaconInteractor(visitedBeaconInteractor:VisitedBeaconInteractorInput, didAddVisit:Void){
+        // do nothing for now
+    }
+    func visitedBeaconInteractor(visitedBeaconInteractor:VisitedBeaconInteractorInput, didError error:NSError){
+        print("Error: \(error.code)")
     }
 
     

@@ -9,7 +9,7 @@
 import Foundation
 
 protocol VisitedBeaconInteractorInput {
-    func addVisit(visit: Visit, output:VisitedBeaconInteractorOutput)
+    func addVisit(beaconMinorId:Int, output:VisitedBeaconInteractorOutput)
 }
 
 protocol VisitedBeaconInteractorOutput {
@@ -23,10 +23,18 @@ class VisitedBeaconInteractor: VisitedBeaconInteractorInput {
     
     // MARK: - VisitedBeaconInteractorInput Protocol
     
-    func addVisit(visit: Visit, output:VisitedBeaconInteractorOutput) {
+    func addVisit(beaconMinorId:Int, output:VisitedBeaconInteractorOutput) {
+        
+        let userId = GetLoggedInUserID()
+        
+        let df = NSDateFormatter()
+        df.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSX"
+        
+        let timestamp = df.stringFromDate(NSDate())
+        
         userRepository.addVisit(
-            userId: GetLoggedInUserID(),
-            visit: visit,
+            userId: userId,
+            visit: Visit(beaconMinorId: beaconMinorId, userId: userId, timestamp: timestamp),
             credential: AppCredential(),
             success: { ( _) in output.visitedBeaconInteractor(self, didAddVisit: ()) },
             failure: { (error) in output.visitedBeaconInteractor(self, didError: error) })

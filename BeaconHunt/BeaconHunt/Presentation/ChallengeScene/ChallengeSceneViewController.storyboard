@@ -16,22 +16,68 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6M-vw-ChE">
+                                <rect key="frame" x="279" y="61" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ap3-b1-uEU">
+                                <rect key="frame" x="20" y="106" width="560" height="179"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="179" id="3YS-tv-Py5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VuA-Th-fHW">
+                                <rect key="frame" x="20" y="442" width="560" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="Give me a hint"/>
+                                <connections>
+                                    <action selector="hintButtonAction:" destination="p9D-ek-KvK" eventType="touchUpInside" id="6uz-Ke-LY4"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hint" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xhb-To-GoV">
+                                <rect key="frame" x="20" y="538" width="560" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Have you found it?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kby-IY-W6S">
                                 <rect key="frame" x="20" y="396" width="560" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Ap3-b1-uEU" firstAttribute="trailing" secondItem="kby-IY-W6S" secondAttribute="trailing" id="7Az-ze-zjB"/>
                             <constraint firstItem="kby-IY-W6S" firstAttribute="leading" secondItem="227-Yn-UH6" secondAttribute="leading" constant="20" id="CCk-fI-cHq"/>
+                            <constraint firstItem="VCE-VI-Sdk" firstAttribute="top" secondItem="Xhb-To-GoV" secondAttribute="bottom" constant="44" id="DVf-Rb-dtJ"/>
+                            <constraint firstItem="Ap3-b1-uEU" firstAttribute="leading" secondItem="kby-IY-W6S" secondAttribute="leading" id="RZn-Fj-eSw"/>
+                            <constraint firstItem="l6M-vw-ChE" firstAttribute="top" secondItem="2tp-8e-ZIE" secondAttribute="bottom" constant="41" id="U28-3d-uDF"/>
+                            <constraint firstAttribute="trailing" secondItem="l6M-vw-ChE" secondAttribute="trailing" constant="279" id="Ut7-9i-x1C"/>
+                            <constraint firstItem="Ap3-b1-uEU" firstAttribute="top" secondItem="l6M-vw-ChE" secondAttribute="bottom" constant="24" id="VgO-Q2-efj"/>
                             <constraint firstAttribute="trailing" secondItem="kby-IY-W6S" secondAttribute="trailing" constant="20" id="aUi-sc-Tr4"/>
+                            <constraint firstAttribute="trailing" secondItem="VuA-Th-fHW" secondAttribute="trailing" constant="20" id="dh8-Hb-iOl"/>
+                            <constraint firstItem="Ap3-b1-uEU" firstAttribute="top" secondItem="227-Yn-UH6" secondAttribute="top" constant="106" id="iVh-gr-jlA"/>
+                            <constraint firstItem="Xhb-To-GoV" firstAttribute="leading" secondItem="227-Yn-UH6" secondAttribute="leading" constant="20" id="iqd-Ow-BvD"/>
+                            <constraint firstItem="VuA-Th-fHW" firstAttribute="leading" secondItem="227-Yn-UH6" secondAttribute="leading" constant="20" id="kxj-TF-4SJ"/>
+                            <constraint firstItem="l6M-vw-ChE" firstAttribute="leading" secondItem="227-Yn-UH6" secondAttribute="leading" constant="279" id="llf-DA-a6L"/>
+                            <constraint firstItem="VuA-Th-fHW" firstAttribute="top" secondItem="kby-IY-W6S" secondAttribute="bottom" constant="25" id="pXt-S3-elg"/>
+                            <constraint firstAttribute="trailing" secondItem="Xhb-To-GoV" secondAttribute="trailing" constant="20" id="v1g-N9-v5g"/>
                             <constraint firstItem="VCE-VI-Sdk" firstAttribute="top" secondItem="kby-IY-W6S" secondAttribute="bottom" constant="183" id="vNT-GK-ggo"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="descriptionLabel" destination="Ap3-b1-uEU" id="rOv-a3-8tN"/>
+                        <outlet property="hintButton" destination="VuA-Th-fHW" id="w6I-HZ-Lji"/>
+                        <outlet property="hintLabel" destination="Xhb-To-GoV" id="qJh-It-oTX"/>
                         <outlet property="statusLabel" destination="kby-IY-W6S" id="sJE-6v-6pI"/>
+                        <outlet property="titleLabel" destination="l6M-vw-ChE" id="pPc-tN-KXp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QwI-52-K9s" userLabel="First Responder" sceneMemberID="firstResponder"/>
