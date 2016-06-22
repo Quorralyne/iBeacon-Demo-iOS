@@ -6,13 +6,13 @@
  "Manufacturer": "ABC Beacons, Pty."
  },
  {
- "BeaconMinorId": 25234,
+ "BeaconMinorId": 7002,
  "BeaconMajorId": 8765,
  "UUID": "649DBB93-4F4A-4765-9348-0C9FEDC92476",
  "Manufacturer": "Hambone Bacons Corp."
  },
  {
- "BeaconMinorId": 62749,
+ "BeaconMinorId": 25234,
  "BeaconMajorId": 1110,
  "UUID": "88467D17-52E7-4189-A6DA-BF47B5D87000",
  "Manufacturer": "Unusual Products, Inc."
