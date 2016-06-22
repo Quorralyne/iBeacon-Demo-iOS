@@ -13,11 +13,11 @@ class ChallengeSceneViewController: UIViewController, CLLocationManagerDelegate,
     
     private var selectedChallenge: [String:AnyObject] = [:]
 
-    @IBOutlet weak var statusLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var hintLabel: UILabel!
-    @IBOutlet weak var hintButton: UIButton!
+    @IBOutlet weak var statusLabel: UILabel? = nil
+    @IBOutlet weak var titleLabel: UILabel? = nil
+    @IBOutlet weak var descriptionLabel: UILabel? = nil
+    @IBOutlet weak var hintLabel: UILabel? = nil
+    @IBOutlet weak var hintButton: UIButton? = nil
     
     private lazy var visitedBeaconInteractor : VisitedBeaconInteractorInput = VisitedBeaconInteractor()
     
@@ -40,43 +40,57 @@ class ChallengeSceneViewController: UIViewController, CLLocationManagerDelegate,
     }
     
     func changeStatusText(text : String) {
-        self.statusLabel.text = String(text)
+        self.statusLabel?.text = String(text)
     }
     
-    func showHintLabel(){
-        self.hintLabel.text = selectedChallenge["Note"] as? String
+    func showHintLabel(shouldShow:Bool){
+        self.hintLabel?.hidden = !shouldShow
     }
     
-    func setChallengeData(challengeData:[String:AnyObject]){
+    func hintLabelIsShown() -> Bool {
+        return !(self.hintLabel?.hidden ?? true)
+    }
+    
+    
+    // MARK: - ChallengeListDetailPresenter Protocol
+    
+    func setChallengeData(challengeData:[String:AnyObject]) {
         self.selectedChallenge = challengeData
-        self.titleLabel.text = challengeData["Title"] as? String
-        self.descriptionLabel.text = challengeData["Description"] as? String
-        self.hintLabel.text = ""
     }
     
-    //MARK: - Actions
+    private func updateUIForSelectedChallengeData() {
+        dispatch_async(dispatch_get_main_queue()) {
+            let challengeData = self.selectedChallenge
+            self.titleLabel?.text = challengeData["Title"] as? String
+            self.descriptionLabel?.text = challengeData["Description"] as? String
+            self.hintLabel?.text = challengeData["Note"] as? String
+            self.showHintLabel(false)
+        }
+    }
+    
+    
+    // MARK: - Actions
     
     @IBAction func hintButtonAction(sender:AnyObject?) {
-        self.showHintLabel()
+        self.showHintLabel( !(hintLabelIsShown()) )
     }
+    
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupLocationManager()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        startLocationManager()
+        self.startLocationManager()
+        self.updateUIForSelectedChallengeData()
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        
         stopLocationManager()
     }
     
@@ -102,21 +116,15 @@ class ChallengeSceneViewController: UIViewController, CLLocationManagerDelegate,
     }
     
     func visitedBeaconInteractor(visitedBeaconInteractor:VisitedBeaconInteractorInput, didAddVisit:Void){
-        // do nothing for now
+        dispatch_async(dispatch_get_main_queue()) {
+            print("Beacon visit recorded successfully.")
+        }
     }
+    
     func visitedBeaconInteractor(visitedBeaconInteractor:VisitedBeaconInteractorInput, didError error:NSError){
-        print("Error: \(error.code)")
+        dispatch_async(dispatch_get_main_queue()) {
+            print("Error: \(error.code)")
+        }
     }
-
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    
-    // MARK: - Actions
 
 }
