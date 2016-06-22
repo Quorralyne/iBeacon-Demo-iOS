@@ -1,20 +1,20 @@
  [
   {
-  "BeaconMinorId": "1234",
-  "Title": "Challenge 1",
-  "Description": "Where am I?",
-  "Hint": "High places."
+  "BeaconMinorId": 44700,
+  "Title": "Find beacon 44700",
+  "Description": "I am displayed in reality above those who retreat to another world. Their eyes are covered yet they see more than you.",
+  "Note": "Near a vendor booth featuring VR technology."
   },
   {
-  "BeaconMinorId": "5678",
-  "Title": "Challenge 2",
-  "Description": "Where am I? - pt 2",
-  "Hint": "Behind you."
+  "BeaconMinorId": 25234,
+  "Title": "Find beacon 25234",
+  "Description": "I see all who first enter this place, new friends and old. All must pass through here to unlock the knowledge of the kingdom.",
+  "Note": "Near the registration table."
   },
   {
-  "BeaconMinorId": "9101",
-  "Title": "Challenge 3",
-  "Description": "Where am I? - pt 3",
-  "Hint": "Around and about."
+  "BeaconMinorId": 62749,
+  "Title": "Find beacon 62749",
+  "Description": "I may be what you hunt, but not what satiates your hunger.",
+  "Note": "Near the lunch buffet tables."
   }
 ]

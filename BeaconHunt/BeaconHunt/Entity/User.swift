@@ -25,14 +25,14 @@ class User : DictionaryConvertible {
     required convenience init(dictionary:[String:AnyObject]?) {
         self.init()
         guard let dict = dictionary else { return }
-        if let userId  = dict["userId"] as? String { self.userId = Int(userId) ?? 0 }
+        if let userId  = dict["UserId"] as? Int { self.userId = userId }
         if let email   = dict["Email"]  as? String { self.email = email }
         if let name    = dict["Name"]   as? String { self.name = name }
     }
     
     func toDictionary() -> [String:AnyObject] {
         var dict = [String:AnyObject]()
-        if (userId > 0)  { dict["userId"] = userId }
+        if (userId > 0)  { dict["UserId"] = userId }
         if (email != "") { dict["Email"] = email }
         if (name  != "") { dict["Name"] = name }
         return dict
@@ -51,6 +51,7 @@ class User : DictionaryConvertible {
 class AddUserResponse : DictionaryConvertible {
     
     var userId : Int = 0
+    var name : String = ""
     var key : String = ""
     
     init() {}
@@ -58,13 +59,14 @@ class AddUserResponse : DictionaryConvertible {
     required convenience init(dictionary:[String:AnyObject]?) {
         self.init()
         guard let dict = dictionary else { return }
-        if let userId = dict["userId"] as? String { self.userId = Int(userId) ?? 0 }
+        if let userId = dict["UserId"] as? Int { self.userId = userId }
+        if let name = dict["Name"]  as? String { self.name = name }
         if let key  = dict["key"]  as? String { self.key = key }
     }
     
     func toDictionary() -> [String:AnyObject] {
         return [
-            "userId": userId,
+            "UserId": userId,
             "key"   : key
         ]
     }
@@ -72,28 +74,28 @@ class AddUserResponse : DictionaryConvertible {
 
 class UserLogin : DictionaryConvertible {
     
-    var username : String = ""
-    var passkey  : String = ""
+    var email : String = ""
+    var key   : String = ""
     
     init() {}
     
-    convenience init(username:String, passkey:String) {
+    convenience init(email:String, key:String) {
         self.init()
-        self.username = username
-        self.passkey = passkey
+        self.email = email
+        self.key = key
     }
     
     required convenience init(dictionary:[String:AnyObject]?) {
         self.init()
         guard let dict = dictionary else { return }
-        if let username = dict["username"]  as? String { self.username = username }
-        if let passkey  = dict["passkey"]  as? String { self.passkey = passkey }
+        if let email = dict["Email"]  as? String { self.email = email }
+        if let key  = dict["Key"]  as? String { self.key = key }
     }
     
     func toDictionary() -> [String:AnyObject] {
         return [
-            "username"  : username,
-            "passkey"   : passkey
+            "Email" : email,
+            "Key"   : key
         ]
     }
 }

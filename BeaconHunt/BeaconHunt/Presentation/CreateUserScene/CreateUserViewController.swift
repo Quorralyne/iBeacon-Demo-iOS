@@ -50,6 +50,10 @@ class CreateUserViewController: UIViewController, CreateUserInteractorOutput, UI
         
     }
     
+    private func performSegueToChallengeListScene() {
+        self.performSegueWithIdentifier(toChallengeListSceneSegueID, sender: self)
+    }
+    
     
     // MARK: - Actions
     
@@ -82,9 +86,9 @@ class CreateUserViewController: UIViewController, CreateUserInteractorOutput, UI
         self.activityView.startAnimating()
 }
     
-    private func displayCreateUserSuccess() {
+    private func displayCreateUserSuccess(passkey:String) {
         self.resetFields()
-        
+        self.displayPasskeyDialog(passkey)
     }
     
     private func displayCreateUserFailed() {
@@ -104,11 +108,12 @@ class CreateUserViewController: UIViewController, CreateUserInteractorOutput, UI
     private func displayPasskeyDialog(passkey:String) {
         let alert = UIAlertController(
             title: passkey,
-            message: "This is your new passkey. Please remember it for future use.",
+            message: "\nThis is your new passkey. Please remember it for future use.\n",
             preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { [weak self] (alertAction) in
-            if let me = self { me.performSegueWithIdentifier(me.toChallengeListSceneSegueID, sender: me) }
-        }))
+        alert.addAction(UIAlertAction(
+            title: "OK",
+            style: .Default,
+            handler: { [weak self] (alertAction) in  self?.performSegueToChallengeListScene() } ))
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
@@ -117,7 +122,7 @@ class CreateUserViewController: UIViewController, CreateUserInteractorOutput, UI
     
     func createUserInteractor(createUserInteractor:CreateUserInteractorInput, createUserSuccess response:AddUserResponse) {
         dispatch_async(dispatch_get_main_queue()) {
-            self.displayCreateUserSuccess()
+            self.displayCreateUserSuccess(response.key)
         }
     }
     

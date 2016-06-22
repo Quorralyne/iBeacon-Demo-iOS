@@ -57,6 +57,10 @@ class UserDataStoreLocal : UserDataStore {
         success(nil)
     }
     
+    func addVisit(userId userId:Int, visitDict:[String:AnyObject], credential:Credential, success: (() -> ()), failure: ((NSError) -> ())) {
+        success()
+    }
+    
     func deleteAllVisits(userId userId:Int, credential:Credential, success: (() -> ()), failure: ((NSError) -> ())) {
         success()
     }

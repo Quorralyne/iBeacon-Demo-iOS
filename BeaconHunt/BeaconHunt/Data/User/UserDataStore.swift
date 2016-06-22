@@ -16,6 +16,7 @@ protocol UserDataStore {
     func deleteUser(userId userId:Int, credential:Credential, success: (() -> ()), failure: ((NSError) -> ()))
     func getAllVisits(userId userId:Int, success: (([[String: AnyObject]]?) -> ()), failure: ((NSError) -> ()))
     func getVisit(userId userId:Int, beaconMinorId:Int, success: (([String: AnyObject]?) -> ()), failure: ((NSError) -> ()))
+    func addVisit(userId userId:Int, visitDict:[String:AnyObject], credential:Credential, success: (() -> ()), failure: ((NSError) -> ()))
     func deleteAllVisits(userId userId:Int, credential:Credential, success: (() -> ()), failure: ((NSError) -> ()))
     func deleteVisit(userId userId:Int, beaconMinorId:Int, credential:Credential, success: (() -> ()), failure: ((NSError) -> ()))
 }

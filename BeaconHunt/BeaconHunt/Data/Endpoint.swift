@@ -26,7 +26,7 @@ protocol Endpoint {
 
 extension Endpoint {
     func getURLBase() -> String {
-        return "https://kcdc-beacon-api.herokuapp.com"
+        return "http://beacon-api.azurewebsites.net"
     }
     
     func getURL() -> NSURL {
@@ -96,6 +96,7 @@ enum UserEndpoint : Endpoint {
     case Delete(Int)
     case GetAllVisits(Int)
     case GetVisit(Int,Int)
+    case AddVisit(Int)
     case DeleteAllVisits(Int)
     case DeleteVisit(Int,Int)
     
@@ -108,6 +109,7 @@ enum UserEndpoint : Endpoint {
         case .Delete:           return .DELETE
         case .GetAllVisits:     return .GET
         case .GetVisit:         return .GET
+        case .AddVisit:         return .POST
         case .DeleteAllVisits:  return .DELETE
         case .DeleteVisit:      return .DELETE
         }
@@ -122,6 +124,7 @@ enum UserEndpoint : Endpoint {
         case .Delete(let userid):                       return "users/\(userid)"
         case .GetAllVisits(let userid):                 return "users/\(userid)/visits"
         case .GetVisit(let userid, let beaconMinorId):  return "users/\(userid)/visits/\(beaconMinorId)"
+        case .AddVisit(let userid):                     return "users/\(userid)/visits"
         case .DeleteAllVisits(let userid):              return "users/\(userid)/visits"
         case .DeleteVisit(let userid, let beaconMinorId): return "users/\(userid)/visits/\(beaconMinorId)"
         }
