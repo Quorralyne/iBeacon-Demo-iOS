@@ -20,7 +20,7 @@ protocol ChallengeListInteractorOutput {
 class ChallengeListInteractor: ChallengeListInteractorInput {
     
     private lazy var challengeRepository : ChallengeRepository = ChallengeRepository(dataStore: ChallengeDataStoreLocal())
-    private lazy var userRepository      : UserRepository   = UserRepository(dataStore: UserDataStoreLocal())
+    private lazy var userRepository      : UserRepository   = UserRepository(dataStore: UserDataStoreNetwork())
     
     // MARK: - ChallengeListInteractorInput Protocol
     
@@ -35,12 +35,11 @@ class ChallengeListInteractor: ChallengeListInteractorInput {
         userRepository.getAllVisits(
             userId: userId,
             success: {
-                
                 (visits) in
                 var list = [[String:AnyObject]]()
                 for challenge in challenges {
                     var dict = challenge.toDictionary()
-                    dict["isFound"] = (visits.contains({ $0.beaconMinorId == challenge.beaconMinorId })) ? true : false
+                    dict["isFound"] = (visits.contains({ $0.beaconMinorId == challenge.beaconMinorId })) ? "true" : "false"
                     list.append(dict)
                 }
                 output.challengeListInteractor(self, didGetChallengeList: list)

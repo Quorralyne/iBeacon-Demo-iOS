@@ -1,11 +1,11 @@
 [
  {
-    "userId": "999",
+    "UserId": 999,
     "Email": "test@test.io",
     "Name": "Test"
  },
  {
- "userId": "888",
+ "UserId": 888,
  "Email": "olaf@test.io",
  "Name": "Olaf"
  }

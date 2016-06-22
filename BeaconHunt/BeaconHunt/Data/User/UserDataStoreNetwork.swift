@@ -15,8 +15,10 @@ class UserDataStoreNetwork : UserDataStore {
             endpoint: UserEndpoint.Login,
             credential: credential,
             data: JSONDataFromDictionary(userLoginDict),
-            success: { (data) in  success( parseJSONDictionary(data: data) ) },
-            failure: { (error) in failure(error) })
+            success: { (data) in  
+                success( parseJSONDictionary(data: data) ) },
+            failure: { (error) in 
+                failure(error) })
     }
     
     func getAllUsers(success success: (([[String: AnyObject]]?) -> ()), failure: ((NSError) -> ())) {
@@ -38,7 +40,7 @@ class UserDataStoreNetwork : UserDataStore {
             endpoint: UserEndpoint.Add,
             credential: credential,
             data: JSONDataFromDictionary(userDict),
-            success: { (data) in  success( parseJSONDictionary(data: data) ) },
+            success: { (data) in success( parseJSONDictionary(data: data) ) },
             failure: { (error) in failure(error) })
     }
     
@@ -53,14 +55,25 @@ class UserDataStoreNetwork : UserDataStore {
     func getAllVisits(userId userId:Int, success: (([[String: AnyObject]]?) -> ()), failure: ((NSError) -> ())) {
         WebServiceManager.sendRequest(
             endpoint: UserEndpoint.GetAllVisits(userId),
-            success: { (data) in  success( parseJSONDictionaryArray(data: data)) },
-            failure: { (error) in failure(error) })
+            success: { (data) in  
+                success( parseJSONDictionaryArray(data: data)) },
+            failure: { (error) in 
+                failure(error) })
     }
     
     func getVisit(userId userId:Int, beaconMinorId:Int, success: (([String: AnyObject]?) -> ()), failure: ((NSError) -> ())) {
         WebServiceManager.sendRequest(
             endpoint: UserEndpoint.GetVisit(userId, beaconMinorId),
             success: { (data) in  success( parseJSONDictionary(data: data)) },
+            failure: { (error) in failure(error) })
+    }
+    
+    func addVisit(userId userId:Int, visitDict:[String:AnyObject], credential:Credential, success: (() -> ()), failure: ((NSError) -> ())) {
+        WebServiceManager.sendRequest(
+            endpoint: UserEndpoint.AddVisit(userId),
+            credential: credential,
+            data: JSONDataFromDictionary(visitDict),
+            success: { (data) in  success() },
             failure: { (error) in failure(error) })
     }
     

@@ -19,7 +19,7 @@ protocol CreateUserInteractorOutput {
 
 class CreateUserInteractor: CreateUserInteractorInput {
     
-    private lazy var userRepository : UserRepository = UserRepository(dataStore: UserDataStoreLocal())
+    private lazy var userRepository : UserRepository = UserRepository(dataStore: UserDataStoreNetwork())
     
     // MARK: - LoginInteractorInput Protocol
     
@@ -27,7 +27,9 @@ class CreateUserInteractor: CreateUserInteractorInput {
         userRepository.addUser(
             user: User(name: name, email: email),
             credential: AppCredential(),
-            success: { (addUserResponse) in  output.createUserInteractor(self, createUserSuccess: addUserResponse) },
+            success: { (addUserResponse) in
+                SetLoggedInUserID(addUserResponse.userId)
+                output.createUserInteractor(self, createUserSuccess: addUserResponse) },
             failure: { (error) in output.createUserInteractor(self, didError: error) })
     }
 }

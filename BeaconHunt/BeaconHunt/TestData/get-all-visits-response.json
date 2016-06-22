@@ -1,17 +1,12 @@
 [
  {
- "BeaconMinorId": "1234",
- "UserId": "888",
- "VisitedTimestamp": "2016-06-20T22:59:01-0600"
+ "BeaconMinorId": 1234,
+ "UserId": 888,
+ "VisitedTimestamp": "2016-06-20T22:59:01.000Z"
  },
  {
- "BeaconMinorId": "1234",
- "UserId": "999",
- "VisitedTimestamp": "2016-06-19T07:32:14-0600"
- },
- {
- "BeaconMinorId": "1234",
- "UserId": "1010",
- "VisitedTimestamp": "2016-06-20T19:01:36-0600"
+ "BeaconMinorId": 5678,
+ "UserId": 999,
+ "VisitedTimestamp": "2016-06-19T07:32:14.000Z"
  }
-]
+ ]

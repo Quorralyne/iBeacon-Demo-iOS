@@ -21,7 +21,7 @@ class LoginViewController: UIViewController, LoginInteractorOutput, UITextFieldD
     
     private lazy var loginInteractor : LoginInteractorInput = LoginInteractor()
     
-    private var usernameText : String {
+    private var emailText : String {
         get { return emailField.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) ?? "" }
     }
     
@@ -51,6 +51,14 @@ class LoginViewController: UIViewController, LoginInteractorOutput, UITextFieldD
         
     }
     
+    private func performSegueToChallengeListScene() {
+        self.performSegueWithIdentifier(toChallengeListSceneSegueID, sender: self)
+    }
+    
+    private func performSegueToCreateUserScene() {
+        self.performSegueWithIdentifier(toCreateUserSceneSegueID, sender: self)
+    }
+    
     
     // MARK: - Actions
     
@@ -72,16 +80,16 @@ class LoginViewController: UIViewController, LoginInteractorOutput, UITextFieldD
     }
     
     func conditionallyEnableLoginButton() {
-        self.loginButton.enabled = (self.usernameText != "" && self.passkeyText != "")
+        self.loginButton.enabled = (self.emailText != "" && self.passkeyText != "")
     }
     
     private func doLogin() {
         self.displayLoginBegin()
-        self.loginInteractor.loginUser(username: self.usernameText, passkey: self.passkeyText, output: self)
+        self.loginInteractor.loginUser(email: self.emailText, key: self.passkeyText, output: self)
     }
     
     private func doCreateUser() {
-        self.performSegueWithIdentifier(toCreateUserSceneSegueID, sender: self)
+        self.performSegueToCreateUserScene()
     }
     
     private func displayLoginBegin() {
@@ -94,7 +102,7 @@ class LoginViewController: UIViewController, LoginInteractorOutput, UITextFieldD
     
     private func displayLoginSuccess() {
         self.resetFields()
-        self.performSegueWithIdentifier(toChallengeListSceneSegueID, sender: self)
+        self.performSegueToChallengeListScene()
     }
     
     private func displayLoginFailed() {

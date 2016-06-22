@@ -20,18 +20,18 @@ class Challenge : DictionaryConvertible {
     required convenience init(dictionary:[String:AnyObject]?) {
         self.init()
         guard let dict = dictionary else { return }
-        if let beaconMinorId = dict["BeaconMinorId"] as? String { self.beaconMinorId = Int(beaconMinorId) ?? 0 }
+        if let beaconMinorId = dict["BeaconMinorId"] as? Int { self.beaconMinorId = beaconMinorId }
         if let title = dict["Title"] as? String { self.title = title }
         if let description = dict["Description"] as? String { self.description = description }
-        if let hint = dict["Hint"] as? String { self.hint = hint }
+        if let hint = dict["Note"] as? String { self.hint = hint }
     }
     
     func toDictionary() -> [String:AnyObject] {
         return [
-            "BeaconMinorId" : String(beaconMinorId),
+            "BeaconMinorId" : beaconMinorId,
             "Title"         : title,
             "Description"   : description,
-            "Hint"          : hint
+            "Note"          : hint
         ]
     }
     

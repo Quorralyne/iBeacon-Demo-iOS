@@ -10,7 +10,6 @@ import Foundation
 
 class Visit : DictionaryConvertible {
     
-    var visitId         : Int    = 0
     var beaconMinorId   : Int    = 0
     var userId          : Int    = 0
     var timestamp       : String = ""
@@ -20,18 +19,16 @@ class Visit : DictionaryConvertible {
     required convenience init(dictionary:[String:AnyObject]?) {
         self.init()
         guard let dict   = dictionary else { return }
-        if let visitId   = dict["visitId"]   as? String { self.visitId   = Int(visitId)  ?? 0 }
-        if let beaconMinorId  = dict["BeaconMinorId"]  as? String { self.beaconMinorId  = Int(beaconMinorId) ?? 0 }
-        if let userId    = dict["UserId"]    as? String { self.userId    = Int(userId)   ?? 0 }
-        if let timestamp = dict["VisitedTimestamp"] as? String { self.timestamp = timestamp }
+        if let beaconMinorId  = dict["BeaconMinorId"]  as? Int { self.beaconMinorId  = beaconMinorId }
+        if let userId         = dict["UserId"]    as? Int { self.userId    = userId }
+        if let timestamp      = dict["VisitedTimestamp"] as? String { self.timestamp = timestamp }
     }
     
     func toDictionary() -> [String:AnyObject] {
         return [
-            "visitId"       : String(visitId),
-            "BeaconMinorId" : String(beaconMinorId),
-            "UserId"        : String(userId),
-            "VisitedTimestamp"     : timestamp
+            "BeaconMinorId"     : beaconMinorId,
+            "UserId"            : userId,
+            "VisitedTimestamp"  : timestamp
         ]
     }
     

@@ -65,7 +65,16 @@ class UserRepository {
             userId: userId,
             beaconMinorId: beaconMinorId,
             success: { (dict) in success(Visit(dictionary: dict)) },
-            failure: { (error) in     failure(error)})
+            failure: { (error) in failure(error)})
+    }
+    
+    func addVisit(userId userId:Int, visit:Visit, credential:Credential, success: (() -> ()), failure: ((NSError) -> ())) {
+        self.dataStore?.addVisit(
+            userId: userId,
+            visitDict: visit.toDictionary(),
+            credential: credential,
+            success: { ( _) in    success() },
+            failure: { (error) in failure(error)})
     }
     
     func deleteAllVisits(userId userId:Int, credential:Credential, success: (() -> ()), failure: ((NSError) -> ())) {

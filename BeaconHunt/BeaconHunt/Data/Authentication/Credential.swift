@@ -20,9 +20,9 @@ class Credential {
     }
     
     func getBasicAuthString() -> String {
-        let loginString = "\(username):\(password)"
-        let loginData = loginString.dataUsingEncoding(NSUTF8StringEncoding)
-        let encodedLoginString = loginData?.base64EncodedDataWithOptions([])
+        let loginString : String = "\(username):\(password)"
+        let loginData   : NSData = loginString.dataUsingEncoding(NSUTF8StringEncoding) ?? NSData()
+        let encodedLoginString : String = loginData.base64EncodedStringWithOptions([])
         
         return "Basic \(encodedLoginString)"
     }

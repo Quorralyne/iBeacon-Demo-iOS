@@ -81,7 +81,7 @@ class ChallengeListViewController : UITableViewController, ChallengeListInteract
     func challengeListInteractor(challengeListInteractor:ChallengeListInteractorInput, didGetChallengeList challengeList:[[String:AnyObject]]) {
         dispatch_async(dispatch_get_main_queue()) {
             self.tableData = challengeList
-            self.reload(animated:true)
+            self.reload(animated:false)
         }
     }
     
@@ -108,7 +108,11 @@ class ChallengeListViewController : UITableViewController, ChallengeListInteract
         let row = indexPath.row
         cell.textLabel?.text        =   tableData[row]["Title"] as? String
         cell.detailTextLabel?.text  =   tableData[row]["Description"] as? String
-        cell.accessoryType          = ((tableData[row]["isFound"] as? Bool) ?? false) ? .Checkmark : .None
+        
+        if let isFound = tableData[row]["isFound"] as? String {
+            cell.accessoryType = (isFound == "true") ? .Checkmark : .None
+        } else { cell.accessoryType = .None }
+        
         return cell
     }
     

@@ -9,7 +9,7 @@
 import Foundation
 
 protocol LoginInteractorInput {
-    func loginUser(username username:String, passkey:String, output:LoginInteractorOutput)
+    func loginUser(email email:String, key:String, output:LoginInteractorOutput)
 }
 
 protocol LoginInteractorOutput {
@@ -19,13 +19,13 @@ protocol LoginInteractorOutput {
 
 class LoginInteractor: LoginInteractorInput {
     
-    private lazy var userRepository : UserRepository = UserRepository(dataStore: UserDataStoreLocal())
+    private lazy var userRepository : UserRepository = UserRepository(dataStore: UserDataStoreNetwork())
     
     // MARK: - LoginInteractorInput Protocol
     
-    func loginUser(username username:String, passkey:String, output:LoginInteractorOutput) {
+    func loginUser(email email:String, key:String, output:LoginInteractorOutput) {
         userRepository.loginUser(
-            userLogin: UserLogin(username: username, passkey: passkey),
+            userLogin: UserLogin(email: email, key: key),
             credential: AppCredential(),
             success: { (user) in
                 SetLoggedInUserID(user.userId)
