@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Challenge : DictionaryConvertible {
+class Challenge : DictionaryConvertable {
     
     var beaconMinorId   : Int      = 0
     var title           : String   = ""

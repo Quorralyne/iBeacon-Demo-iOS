@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Beacon : DictionaryConvertible {
+class Beacon : DictionaryConvertable {
 
     var beaconMinorId   : Int      = 0
     var majorId         : Int      = 0
