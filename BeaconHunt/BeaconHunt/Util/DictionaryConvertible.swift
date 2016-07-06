@@ -1,5 +1,5 @@
 //
-//  DictionaryConvertible.swift
+//  DictionaryConvertable.swift
 //  BeaconHunt
 //
 //  Created by Heather Downing on 6/19/16.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol DictionaryConvertible {
+protocol DictionaryConvertable {
     init(dictionary:[String:AnyObject]?)
     func toDictionary() -> [String:AnyObject]
 }

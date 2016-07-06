@@ -8,7 +8,7 @@
 
 import Foundation
 
-class User : DictionaryConvertible {
+class User : DictionaryConvertable {
     
     var userId  : Int    = 0
     var email   : String = ""
@@ -48,7 +48,7 @@ class User : DictionaryConvertible {
 }
 
 
-class AddUserResponse : DictionaryConvertible {
+class AddUserResponse : DictionaryConvertable {
     
     var userId : Int = 0
     var name : String = ""
@@ -72,7 +72,7 @@ class AddUserResponse : DictionaryConvertible {
     }
 }
 
-class UserLogin : DictionaryConvertible {
+class UserLogin : DictionaryConvertable {
     
     var email : String = ""
     var key   : String = ""
