@@ -18,7 +18,7 @@
 		0A1C0CC51D17475100BBD772 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C0CC41D17475100BBD772 /* Endpoint.swift */; };
 		0A1C0CC91D176CDE00BBD772 /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C0CC81D176CDE00BBD772 /* JSONHelper.swift */; };
 		0A1C0CCC1D1770FE00BBD772 /* Beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C0CCB1D1770FE00BBD772 /* Beacon.swift */; };
-		0A1C0CCE1D17776400BBD772 /* DictionaryConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C0CCD1D17776400BBD772 /* DictionaryConvertible.swift */; };
+		0A1C0CCE1D17776400BBD772 /* DictionaryConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1C0CCD1D17776400BBD772 /* DictionaryConvertable.swift */; };
 		0A51D7121D1A685B0027D1C2 /* VisitedBeaconInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A51D7111D1A685B0027D1C2 /* VisitedBeaconInteractor.swift */; };
 		0AEC90F31D18FFEB00238C64 /* ChallengeSceneViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AEC90F21D18FFEB00238C64 /* ChallengeSceneViewController.storyboard */; };
 		0AEC90F51D19011200238C64 /* ChallengeSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEC90F41D19011200238C64 /* ChallengeSceneViewController.swift */; };
@@ -69,7 +69,7 @@
 		0A1C0CC41D17475100BBD772 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		0A1C0CC81D176CDE00BBD772 /* JSONHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONHelper.swift; sourceTree = "<group>"; };
 		0A1C0CCB1D1770FE00BBD772 /* Beacon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beacon.swift; sourceTree = "<group>"; };
-		0A1C0CCD1D17776400BBD772 /* DictionaryConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryConvertible.swift; sourceTree = "<group>"; };
+		0A1C0CCD1D17776400BBD772 /* DictionaryConvertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryConvertable.swift; sourceTree = "<group>"; };
 		0A51D7111D1A685B0027D1C2 /* VisitedBeaconInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitedBeaconInteractor.swift; sourceTree = "<group>"; };
 		0AEC90F21D18FFEB00238C64 /* ChallengeSceneViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChallengeSceneViewController.storyboard; sourceTree = "<group>"; };
 		0AEC90F41D19011200238C64 /* ChallengeSceneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeSceneViewController.swift; sourceTree = "<group>"; };
@@ -208,7 +208,7 @@
 			children = (
 				0A1C0CC21D17461B00BBD772 /* WebServiceManager.swift */,
 				0A1C0CC81D176CDE00BBD772 /* JSONHelper.swift */,
-				0A1C0CCD1D17776400BBD772 /* DictionaryConvertible.swift */,
+				0A1C0CCD1D17776400BBD772 /* DictionaryConvertable.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -429,7 +429,7 @@
 				47BA52DC1D1A04180022FE63 /* UserDataStoreLocal.swift in Sources */,
 				0A1C0CB91D173CF100BBD772 /* BeaconDataStore.swift in Sources */,
 				0A51D7121D1A685B0027D1C2 /* VisitedBeaconInteractor.swift in Sources */,
-				0A1C0CCE1D17776400BBD772 /* DictionaryConvertible.swift in Sources */,
+				0A1C0CCE1D17776400BBD772 /* DictionaryConvertable.swift in Sources */,
 				47BA52941D18A1F00022FE63 /* UserDataStoreNetwork.swift in Sources */,
 				47BA52D81D1A01880022FE63 /* ChallengeDataStoreLocal.swift in Sources */,
 				47BA52B81D19BA970022FE63 /* CreateUserViewController.swift in Sources */,
